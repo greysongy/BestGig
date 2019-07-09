@@ -1,29 +1,23 @@
 module.exports = function(sequelize, DataTypes) {
-    var userData = sequelize.define("Post", {
+    var userData = sequelize.define("userData", {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1]
-            }
         },
 
         company: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+            allowNull: false
         },
 
         rating: {
             type: DataTypes.INTEGER,
-            allowNull: false, 
+            allowNull: false,
         },
 
         payment: {
             type: DataTypes.FLOAT,
-            allowNull: false,
+            allowNull: false
         }
     })
     
