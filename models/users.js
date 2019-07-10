@@ -8,6 +8,15 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
 
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false, 
+            validate: {
+                isEmail: true,
+                len: [1-40]
+            }
+        },
+
         location: {
             type: DataTypes.STRING,
             allowNull: false, 
@@ -17,13 +26,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     })
 
-    // Users.associate = function(models) {
-    //     Users.belongsTo(models.Reviews, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     })
-    // }
+    Users.associate = function(models) {
+        Users.hasMany(models.reviews, {
+           onDelete: "cascade"
+        })
+    }
+
+
     
     return Users;
 }
