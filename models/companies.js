@@ -35,13 +35,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     })
 
-    Companies.associate = function(models) {
-        Companies.belongsTo(models.Reviews, {
-            foreignKey: {
-                allowNull: false
-            }
-        })
-    }
+    // Companies.associate = function(models) {
+    //     Companies.belongsTo(models.Reviews, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     })
+    // }
     
     return Companies;
 }
