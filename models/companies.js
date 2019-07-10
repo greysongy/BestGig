@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     })
 
     // Companies.associate = function(models) {
-    //     Companies.belongsTo(models.Reviews, {
+    //     Companies.(models.Reviews, {
     //         foreignKey: {
     //             allowNull: false
     //         }

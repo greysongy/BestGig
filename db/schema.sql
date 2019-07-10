@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS userData_db;
-CREATE DATABASE userData_db;
+DROP DATABASE IF EXISTS bestGig_db;
+CREATE DATABASE bestGig_db;
 

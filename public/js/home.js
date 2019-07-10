@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Here we get the inputs of the companies
-    var nameInput = $("#name");
+    var nameInput = $("#user-name");
     var companyInput = $("#company")
     var ratingInput = $("#rating");
     var paymentInput = $("#payment")
@@ -11,14 +11,24 @@ $(document).ready(function () {
     $(userDataForm).on('submit', function (event) {
         event.preventDefault();
         var newUserData = {
-            name: nameInput.val().trim(),
+            user_name: nameInput.val().trim(),
             location: locationInput.val().trim()
             // company: companyInput.val().trim(),
             // rating: ratingInput.val().trim(),
             // payment: paymentInput.val().trim()
         }
+
+        // var newCompanyData = {
+        //     company_name: companyInput.val().trim(),
+        // }
         console.log(newUserData)
-        $.post("/api/userData", newUserData).then(function () {
+        $.post("/api/users", newUserData).then(function () {
+            console.log("Updated Users Data")
+        })
+
+        // Here we send over the company Data which must include
+        $.post("/api/companies", newCompanyData).then(function() {
+            console.log("Updated Companies Data")
         })
 
     })
