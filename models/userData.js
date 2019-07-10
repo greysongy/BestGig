@@ -3,23 +3,42 @@ module.exports = function(sequelize, DataTypes) {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: [1-100]
+            }
         },
 
-        company: {
+        location: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-
-        rating: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-
-        payment: {
-            type: DataTypes.FLOAT,
-            allowNull: false
+            allowNull: false, 
+            validate: {
+                len: [1-100]
+            }
         }
+
+        // company: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
+
+        // rating: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
+
+        // payment: {
+        //     type: DataTypes.FLOAT,
+        //     allowNull: false
+        // }
     })
+
+    UserData.associate = function(models) {
+        UserData.belongsTo(models.Reviews, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    }
     
     return UserData;
 }
