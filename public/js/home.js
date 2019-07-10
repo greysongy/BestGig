@@ -4,6 +4,7 @@ $(document).ready(function () {
     var companyInput = $("#company")
     var ratingInput = $("#rating");
     var paymentInput = $("#payment")
+    var locationInput = $("#location")
     // The form used to get the user input
     var userDataForm = $("#userData")
 
@@ -11,13 +12,13 @@ $(document).ready(function () {
         event.preventDefault();
         var newUserData = {
             name: nameInput.val().trim(),
-            company: companyInput.val().trim(),
-            rating: ratingInput.val().trim(),
-            payment: paymentInput.val().trim()
+            location: locationInput.val().trim()
+            // company: companyInput.val().trim(),
+            // rating: ratingInput.val().trim(),
+            // payment: paymentInput.val().trim()
         }
         console.log(newUserData)
         $.post("/api/userData", newUserData).then(function () {
-            console.log("hello")
         })
 
     })
