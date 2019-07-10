@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Lost4815162342",
-    "database": "userData_db",
+    "database": "bestGig_db",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql",
