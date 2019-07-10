@@ -28,8 +28,10 @@ require("./routes/userData-api-routes")(app)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
+
+// For sync({}) put force: true to erase data from database everytime we reload the server
+db.sequelize.sync({}).then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });
