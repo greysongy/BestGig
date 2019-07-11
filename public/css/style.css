@@ -1,3 +1,13 @@
+body {
+    background-color: lightblue;
+}
+
+.container {
+    margin-top: 3%;
+    background-color: white;
+
+}
+
 .input-group.md-form.form-sm.form-2 input {
     border: 1px solid #bdbdbd;
     border-top-left-radius: 0.25rem;
@@ -8,10 +18,42 @@
     border: 1px solid #ffca28;
 }
 
-#userInput {
+#userReview {
     width: 60%;
 }
 
 #companyName {
     font-size: 25pt;
+}
+
+#payBox {
+    margin-top: 2%;
+    height: 25%;
+    border-radius: 100px;
+    background-color: MediumSeaGreen;
+}
+
+#payRate {
+    margin-top: 2%;
+    margin-left: 20%;
+    font-size: 25pt;
+}
+
+#linkBox{
+    margin-top: 2%;
+    height: 25%;
+    border-radius: 100px;
+    background-color: Teal;
+}
+
+#linkId {
+    margin-top: 2%;
+    margin-left: 20%;
+    font-size: 25pt;
+}
+
+.fa-star {
+    margin-left: 5px;
+    color: goldenrod;
+    font-size: 50px;
 }

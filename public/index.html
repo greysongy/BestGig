@@ -14,10 +14,12 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container pb-5">
 
-            <div class="col-8 mt-5">
+
+        <!-- beginning of search bar, filter, and review box -->
+        <div class="row">
+            <div class="col-sm-9 mt-5">
                 <div class="input-group md-form form-sm form-2 pl-0">
                     <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search"
                         aria-label="Search">
@@ -29,17 +31,17 @@
                         <!-- <span class="input-group-text amber lighten-3" id="basic-text1"><i
                                     class="fa fa-bars text-grey" aria-hidden="true"></i></span> -->
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Rating</a>
+                            <a class="dropdown-item" href="#">Pay</a>
+                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4 mt-5">
+            <div class="col-sm-3 mt-5">
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
-                    id="userInput">
+                    id="userReview">
                     Earn Points!
                 </button>
                 <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
@@ -66,11 +68,14 @@
                 </div>
             </div>
         </div>
+<!-- end of search bar, filter, and review box -->
+
+<!-- beginning of results -->
         <div class="row mt-5">
-            <div class="col-2" style="background-color: grey;">
+            <div class="col-sm-2 ml-5" style="background-color: grey;">
                 <img src="https://via.placeholder.com/150">
             </div>
-            <div class="col-4 ml-2" style="background-color: green;">
+            <div class="col-sm-4 ml-2" >
                 <!-- <table border=0>
                     <td>Uber </td>
                     <tr>
@@ -80,29 +85,94 @@
 
                 <div class="container">
                     <div class="row">
-
-                        <div class="col">
+                        <div class="col-sm">
                             <div class="row mt-4" style="background-color: peachpuff;">
-                                <div class="col mini-box" id="companyName">NAME OF COMPANY</div>
-
+                                <div class="col-sm mini-box" id="companyName">NAME OF COMPANY</div>
                             </div>
-                            <div class="row mt-3" style="background-color: lightblue;">
-                                <div class="col mini-box">3</div>
-                                <div class="col mini-box">4</div>
+                            <div class="row mt-3">
+                                <div class="col-sm mini-box" id="rating"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i></div>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-2 ml-2" style="background-color: blue;">
-                I am munnie
+            <div class="col-sm-2 ml-2" id="payBox" >
+               <div id="payRate">$</div>
             </div>
-            <div class="col-2 ml-2" style="background-color: red;">
-                I am link
+            <div class="col-sm-2 ml-2" id="linkBox">
+                <div id="linkId">I am link</div>
             </div>
         </div>
+ 
 
+        <div class="row mt-5">
+                <div class="col-sm-2 ml-5" style="background-color: grey;">
+                    <img src="https://via.placeholder.com/150">
+                </div>
+                <div class="col-sm-4 ml-2" >
+                    <!-- <table border=0>
+                        <td>Uber </td>
+                        <tr>
+                         <td>Row 2</td>
+                       
+                    </table> -->
+    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="row mt-4" style="background-color: peachpuff;">
+                                    <div class="col-sm mini-box" id="companyName">NAME OF COMPANY</div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-sm mini-box" id="rating"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i></div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 ml-2" id="payBox" >
+                   <div id="payRate">$</div>
+                </div>
+                <div class="col-sm-2 ml-2" id="linkBox">
+                    <div id="linkId">I am link</div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                    <div class="col-sm-2 ml-5" style="background-color: grey;">
+                        <img src="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-4 ml-2" >
+                        <!-- <table border=0>
+                            <td>Uber </td>
+                            <tr>
+                             <td>Row 2</td>
+                           
+                        </table> -->
+        
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="row mt-4" style="background-color: peachpuff;">
+                                        <div class="col-sm mini-box" id="companyName">NAME OF COMPANY</div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-sm mini-box" id="rating"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i></div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 ml-2" id="payBox" >
+                       <div id="payRate">$</div>
+                    </div>
+                    <div class="col-sm-2 ml-2" id="linkBox">
+                        <div id="linkId">I am link</div>
+                    </div>
+                </div>
 
     </div>
 
