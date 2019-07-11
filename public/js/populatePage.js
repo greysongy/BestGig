@@ -1,5 +1,8 @@
 
 $(document).ready(function () {
+
+    // Feel free to change the info here! The get is used to grab info from the sql database and post the info on the home.html page.
+    
     var companies = []
     $.get("/api/companies", function (data) {
         companies = data;
