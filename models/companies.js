@@ -31,37 +31,47 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1 - 20]
             }
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1-50]
+            } 
         }
     });
 
     // Here we want to associate the model Companies with the model Reviews
-    Companies.associate = function (models) {
+    // Companies.associate = function (models) {
 
-        // Companies have many reviews
-        Companies.hasMany(models.reviews, {
-            onDelete: "cascade"
-        });
-    };
+    //     // Companies have many reviews
+    //     Companies.hasMany(models.reviews, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
     Companies.create({
-        company_name: "Uber",
+        company_name: "uber",
         average_rating: '3',
         average_pay_per_hour: '15',
-        number_reviews: '0'
+        number_reviews: '0',
+        location: "san francisco"
     })
 
     Companies.create({
-        company_name: "Lyft",
+        company_name: "lyft",
         average_rating: '3',
         average_pay_per_hour: '15',
-        number_reviews: '0'
+        number_reviews: '0',
+        location: "san francisco"
     })
 
     Companies.create({
         company_name: "Lugg",
         average_rating: '3',
         average_pay_per_hour: '15',
-        number_reviews: '0'
+        number_reviews: '0',
+        location: 'san francisco'
     })
 
     return Companies;
