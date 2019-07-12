@@ -31,6 +31,13 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1 - 20]
             }
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1-50]
+            } 
         }
     });
 
@@ -44,24 +51,27 @@ module.exports = function (sequelize, DataTypes) {
     // };
 
     Companies.create({
-        company_name: "Uber",
+        company_name: "uber",
         average_rating: '3',
         average_pay_per_hour: '15',
-        number_reviews: '0'
+        number_reviews: '0',
+        location: "san francisco"
     })
 
     Companies.create({
-        company_name: "Lyft",
+        company_name: "lyft",
         average_rating: '3',
         average_pay_per_hour: '15',
-        number_reviews: '0'
+        number_reviews: '0',
+        location: "san francisco"
     })
 
     Companies.create({
         company_name: "Lugg",
         average_rating: '3',
         average_pay_per_hour: '15',
-        number_reviews: '0'
+        number_reviews: '0',
+        location: 'san francisco'
     })
 
     return Companies;
