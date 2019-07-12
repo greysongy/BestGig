@@ -50,29 +50,29 @@ module.exports = function (sequelize, DataTypes) {
     //     });
     // };
 
-    Companies.create({
-        company_name: "uber",
-        average_rating: '3',
-        average_pay_per_hour: '15',
-        number_reviews: '0',
-        location: "san francisco"
-    })
+    // Companies.create({
+    //     company_name: "uber",
+    //     average_rating: '3',
+    //     average_pay_per_hour: '15',
+    //     number_reviews: '0',
+    //     location: "san francisco"
+    // })
 
-    Companies.create({
-        company_name: "lyft",
-        average_rating: '3',
-        average_pay_per_hour: '15',
-        number_reviews: '0',
-        location: "san francisco"
-    })
+    // Companies.create({
+    //     company_name: "lyft",
+    //     average_rating: '3',
+    //     average_pay_per_hour: '15',
+    //     number_reviews: '0',
+    //     location: "san francisco"
+    // })
 
-    Companies.create({
-        company_name: "Lugg",
-        average_rating: '3',
-        average_pay_per_hour: '15',
-        number_reviews: '0',
-        location: 'san francisco'
-    })
+    // Companies.create({
+    //     company_name: "Lugg",
+    //     average_rating: '3',
+    //     average_pay_per_hour: '15',
+    //     number_reviews: '0',
+    //     location: 'san francisco'
+    // })
 
     return Companies;
 }
