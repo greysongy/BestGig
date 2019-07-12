@@ -14,16 +14,24 @@ var PORT = process.env.PORT || 8080;
 // Requiring our models for syncing
 var db = require("./models");
 
-// Routes
+// Static directory
+app.use(express.static("public"));
 
+
+// Routes
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+//Telling express we want to use main handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static directory
-app.use(express.static("public"));
+
 
 require("./routes/html-routes.js")(app);
 require("./routes/reviews-api-routes.js")(app);
@@ -36,7 +44,7 @@ require("./routes/users-api-routes.js")(app);
 // =============================================================
 
 // For sync({}) put force: true to erase data from database everytime we reload the server
-db.sequelize.sync({}).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT http://localhost:" + PORT);
   });
