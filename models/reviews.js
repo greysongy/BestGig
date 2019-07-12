@@ -68,11 +68,11 @@ module.exports = function (sequelize, DataTypes) {
     var locationArr = ["San Francisco", "Oakland"]
 
     for (var i = 0; i < 25; i++) {
-        var company_name = companyArr[Math.floor(Math.random() * companyArr.length)]
-        var username = usernameArr[Math.floor(Math.random() * usernameArr.length)]
+        var company_name = companyArr[Math.floor(Math.random() * companyArr.length)].toLowerCase()
+        var username = usernameArr[Math.floor(Math.random() * usernameArr.length)].toLowerCase()
         var rating = ratingArr[Math.floor(Math.random() * ratingArr.length)]
         var pay_per_hour = Math.floor(Math.random() * (25-15)) + 15
-        var location = locationArr[Math.floor(Math.random() * locationArr.length)]
+        var location = locationArr[Math.floor(Math.random() * locationArr.length)].toLowerCase()
 
         Reviews.create({
             company_name: company_name,
