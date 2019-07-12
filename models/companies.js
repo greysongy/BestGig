@@ -35,13 +35,13 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     // Here we want to associate the model Companies with the model Reviews
-    Companies.associate = function (models) {
+    // Companies.associate = function (models) {
 
-        // Companies have many reviews
-        Companies.hasMany(models.reviews, {
-            onDelete: "cascade"
-        });
-    };
+    //     // Companies have many reviews
+    //     Companies.hasMany(models.reviews, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
     Companies.create({
         company_name: "Uber",

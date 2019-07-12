@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        user_name: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -30,33 +30,58 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1 - 10]
             }
+        },
+
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
         }
     });
 
     // Associate Reviews model with Companies
-    Reviews.associate = function (models) {
+    // Reviews.associate = function (models) {
 
-        // The model Reviews belongs to Companies
-        Reviews.belongsTo(models.companies, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+    //     // The model Reviews belongs to Companies
+    //     Reviews.belongsTo(models.companies, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
 
-        Reviews.belongsTo(models.users, {
-            foreignKey: {
-                allowNull: false
-            }
-        })
-    };
-
-    // Reviews.belongsTo(models.Users, {
-    //     foreignKey: {
-    //         allowNull: false
-    //     }
-    // })
+    //     Reviews.belongsTo(models.users, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     })
+    // };
 
 
+
+    // this can autopopulate our database in case we need it
+
+    var usernameArr = ["Daniel", "John", "Matt", "Chelsea", "Ray", "Bruna", "Ramon", "Lita", "Ivan", "Andrea", "Zoolander"]
+    var companyArr = ["Uber", "Lyft"]
+    var ratingArr = ["1", "2", "3", "4", "5"]
+    var locationArr = ["San Francisco", "Oakland"]
+
+    for (var i = 0; i < 25; i++) {
+        var company_name = companyArr[Math.floor(Math.random() * companyArr.length)]
+        var username = usernameArr[Math.floor(Math.random() * usernameArr.length)]
+        var rating = ratingArr[Math.floor(Math.random() * ratingArr.length)]
+        var pay_per_hour = Math.floor(Math.random() * (25-15)) + 15
+        var location = locationArr[Math.floor(Math.random() * locationArr.length)]
+
+        Reviews.create({
+            company_name: company_name,
+            username: username,
+            rating: rating,
+            pay_per_hour: pay_per_hour,
+            location: location
+        })    
+    }
 
     return Reviews;
 }
