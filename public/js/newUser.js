@@ -14,8 +14,7 @@ $(document).ready(function () {
         var emailInput = $("#user-email").val()
         var locationInput = $("#city").val().trim().toLowerCase();
 
-        console.log(emailInput)
-
+        // Place all the userData in an object to send 
         var newUserData = {
             username: nameInput,
             email: emailInput,
@@ -25,27 +24,31 @@ $(document).ready(function () {
         // Here we post the new user data
         $.post("/api/users", newUserData).then(function () {
             console.log("New User Added!", newUserData.username)
+
+            // Once the post is complete, we will return back data on companies from that location
+            var companyLocation = locationInput.replace(" ", "-")
+            $.get("/api/companies/" + companyLocation).then(function(dbCompanies) {
+                companies = []
+                for (var i = 0; i < dbCompanies.length; i++) {
+                    companies.push(dbCompanies[i].dataValues)
+                }
+
+                var hbsObject = {
+                    companies: companies
+                }
+                console.log(hbsObject)
+
+                // ??????????????????
+                // res.render("index", hbsObject)
+            })
+
+
         })
 
-        var companyLocation = locationInput.replace(" ", "-")
 
         // Using the company location, we can get all the companies from that location using this
 
         // but now how can we render our page?
-        $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
-            companies = []
-            for (var i = 0; i < dbCompanies.length; i++) {
-                companies.push(dbCompanies[i].dataValues)
-            }
-
-            var hbsObject = {
-                companies: companies
-            }
-            console.log(hbsObject)
-            
-            // ??????????????????
-            res.render("index", hbsObject)
-        })
 
 
 

@@ -1,5 +1,4 @@
 <div class="container">
-    <h1>Show me Companies</h1>
     <div class="modal" tabindex="-1" role="dialog" id="myModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -57,6 +56,9 @@
         </div>
     </div>
 
+{{!-- Only show when user completes form --}}
+    <h1>Show me Companies</h1>
+
     <ul>
         {{#each companies}}
         <li>
@@ -66,4 +68,5 @@
         </li>
         {{/each}}
     </ul>
+
 </div>
