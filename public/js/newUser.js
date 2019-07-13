@@ -34,22 +34,39 @@ $(document).ready(function () {
 
             $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
                 console.log(dbCompanies)
+                // Here is where we sort by pay
+
                 for (var i = 0; i < dbCompanies.length; i++) {
-                    $("#companies").append(`<h1>${dbCompanies[i].company_name}</h1>`)
+                    $("#results").append(`<div class="row mt-5">
+                    <div class="col-sm-2 ml-5" style="background-color: grey;">
+                        <img src="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-4 ml-2"><div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="row mt-2" style="background-color: peachpuff;">
+                                <div class="col-sm mini-box" id="companyName">${dbCompanies[i].company_name}</div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm mini-box" id="rating"><i class="fa fa-star"> </i> <i class="fa fa-star">
+                                    </i> <i class="fa fa-star"> </i></div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div><div class="col-sm-2 ml-2" id="payBox">
+                <button type="button" class="btn btn-outline-success text-dark">$${dbCompanies[i].average_pay_per_hour.toFixed(2)}</button>
+            </div>
+            <div class="col-sm-2 ml-2" id="linkBox">
+                <div id="linkId">I am link</div>
+            </div>
+        </div>`)
                 }
 
             })
 
 
         })
-
-
-        // Using the company location, we can get all the companies from that location using this
-
-        // but now how can we render our page?
-
-
-
     })
 
 });

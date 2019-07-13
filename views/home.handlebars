@@ -22,7 +22,7 @@
 
                     <!-- TEST SPACE FOR AUTOCOMPLETE -->
                     <div class="form-location">
-                        <label for="user-email" class="col-form-label">Your Location:</label>
+                        <label for="city" class="col-form-label">Your Location:</label>
                         <input type="search" id="city" class="form-control" placeholder="Where are you located?" />
 
                         <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
@@ -51,18 +51,18 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                <button id='submitUser' type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
             </div>
         </div>
     </div>
 </div>
 <!-- Modal for User Reviews -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Submit Your Review</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -89,17 +89,18 @@
                         <label>Location</label>
                         <input class="form-control" id="location" placeholder="Location">
                     </div>
-                    <button type="submit" id="submitReview" class="btn btn-primary">Submit</button>
                 </form>
-            </div>
 
+
+            </div>
+            <div class="modal-footer">
+                <button id='submitReview' type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+            </div>
         </div>
     </div>
 </div>
 
-
 <div class="container pb-5" id='main-container'>
-
 
     <!-- beginning of search bar, filter, and review box -->
     <div class="row">
@@ -112,8 +113,6 @@
                         aria-haspopup="true" aria-expanded="false">
                         Filter
                     </button>
-                    <!-- <span class="input-group-text amber lighten-3" id="basic-text1"><i
-                                    class="fa fa-bars text-grey" aria-hidden="true"></i></span> -->
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Rating</a>
                         <a class="dropdown-item" href="#">Pay</a>
@@ -133,79 +132,17 @@
             <div class="modal" id="exampleModal">
 
             </div>
-            <!-- Modal -->
-            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
         </div>
     </div>
     <!-- end of search bar, filter, and review box -->
 
-    <!-- beginning of results -->
-    <div class="row mt-5">
-        <div class="col-sm-2 ml-5" style="background-color: grey;">
-            <img src="https://via.placeholder.com/150">
-        </div>
-        <div class="col-sm-4 ml-2">
-            <!-- <table border=0>
-                    <td>Uber </td>
-                    <tr>
-                     <td>Row 2</td>
-                   
-                </table> -->
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="row mt-2" style="background-color: peachpuff;">
-                            <div class="col-sm mini-box" id="companyName">NAME OF COMPANY</div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-sm mini-box" id="rating"><i class="fa fa-star"> </i> <i class="fa fa-star">
-                                </i> <i class="fa fa-star"> </i></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2 ml-2" id="payBox">
-            <button type="button" class="btn btn-outline-success text-dark">$</button>
-        </div>
-        <div class="col-sm-2 ml-2" id="linkBox">
-            <div id="linkId">I am link</div>
-        </div>
-    </div>
-
+{{!-- Beginning of results --}}
     <div class="container" id="results">
-
     </div>
-
-
-
 
 </div>
 
-
-
-<script>
+{{!-- <script>
     $.ajax({
         url: "api/companies",
         type: "GET"
@@ -225,4 +162,4 @@
             $("#results").append(titleh1)
         }
     })
-</script>
+</script> --}}
