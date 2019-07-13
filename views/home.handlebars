@@ -200,7 +200,9 @@
             </div>
         </div>
 
-
+<div class="container" id="results">
+    
+</div>
 
         
     
@@ -209,7 +211,26 @@
 
 
 
+<script>
+    $.ajax({
+        url: "api/companies",
+        type: "GET"
+    }).then(function (dbCompanies) {
+        console.log("saturday morning", dbCompanies)
 
+                function comparePayPerHour(a, b) {
+                return a.average_pay_per_hour - b.average_pay_per_hour;
+                }
+
+                var sortedCompanies = dbCompanies.sort(comparePayPerHour);
+                console.log("sorted our companies :-)", sortedCompanies);
+                 for (var i = 0; i < 4; i++) {
+                     var titleh1 = $("<h1>")
+                     titleh1.text(sortedCompanies[i].company_name)
+                     console.log("about to apend to page", titleh1)
+                     $("#results").append(titleh1)
+                 }
+            })
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
