@@ -13,8 +13,6 @@ module.exports = function(app) {
 
     // Adds a new user to the model in mysql
     app.post("/api/users", function(req, res) {
-        console.log(req.body)
-        
         db.users.create(req.body).then(function(dbUsers) {
             res.json(dbUsers)
         })

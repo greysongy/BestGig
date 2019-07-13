@@ -1,4 +1,7 @@
+// This file grabs user information to send it to the users-api-route. There it will create a new user entry
+
 $(document).ready(function () {
+
     // Here we get the inputs of the companies
     var nameInput = $("#user-name");
     var companyInput = $("#company")
@@ -13,22 +16,11 @@ $(document).ready(function () {
         var newUserData = {
             user_name: nameInput.val().trim(),
             location: locationInput.val().trim()
-            // company: companyInput.val().trim(),
-            // rating: ratingInput.val().trim(),
-            // payment: paymentInput.val().trim()
         }
 
-        // var newCompanyData = {
-        //     company_name: companyInput.val().trim(),
-        // }
-        console.log(newUserData)
+        // Here, the newUserData will be sent in the req.body to the route /api/users in the users-api-route
         $.post("/api/users", newUserData).then(function () {
             console.log("Updated Users Data")
-        })
-
-        // Here we send over the company Data which must include
-        $.post("/api/companies", newCompanyData).then(function() {
-            console.log("Updated Companies Data")
         })
 
     })
