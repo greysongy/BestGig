@@ -9,25 +9,7 @@ module.exports = function (app) {
     // The root route will render the index html page (handlebars)
     // Changed from res.render("home") to res.render("index")
     app.get("/", function (req, res) {
-         // HERE, we do not want to load the companies in until the user has input a location that findAll({location}) can use.
-
-        // OR: We CAN return back all the info, but then on the client side js we return (to the handlebars page) companies only specific to that location
-
-        db.companies.findAll({}).then(function (dbCompanies) {
-            var companies = []
-            for (var i = 0; i < dbCompanies.length; i++) {
-                companies.push(dbCompanies[i].dataValues)
-            }
-
-            var hbsObject = {
-                companies: companies
-            }
-
-            res.render("index", hbsObject)
-        })
-
-
-       
+        res.render("home")
     })
 
     // The test route will render the test html page

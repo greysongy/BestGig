@@ -27,19 +27,13 @@ $(document).ready(function () {
 
             // Once the post is complete, we will return back data on companies from that location
             var companyLocation = locationInput.replace(" ", "-")
-            $.get("/api/companies/" + companyLocation).then(function(dbCompanies) {
-                companies = []
+
+            $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
+                console.log(dbCompanies)
                 for (var i = 0; i < dbCompanies.length; i++) {
-                    companies.push(dbCompanies[i].dataValues)
+                    $("#companies").append(`<h1>${dbCompanies[i].company_name}</h1>`)
                 }
 
-                var hbsObject = {
-                    companies: companies
-                }
-                console.log(hbsObject)
-
-                // ??????????????????
-                // res.render("index", hbsObject)
             })
 
 
