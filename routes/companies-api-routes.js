@@ -67,10 +67,16 @@ module.exports = function (app) {
                 var newNumRatings = currentNumRatings + 1;
                 console.log("new Num");
                 console.log(newNumRatings);
-                var newPay = (currentPay + parseFloat(req.body.pay_per_hour)) / newNumRatings;
+                var newPay = ((currentPay * currentNumRatings) + parseFloat(req.body.pay_per_hour)) / newNumRatings;
+                console.log("What the math should be");
+                console.log((12.5 + 20)/3);
+                console.log("Newly Submitted Pay Amount: " + parseFloat(req.body.pay_per_hour));
                 console.log("New pay");
                 console.log(newPay);
-                var newRating = (currentRating + parseInt(req.body.rating)) / newNumRatings;
+                var newRating = ((currentRating * currentNumRatings) + parseInt(req.body.rating)) / newNumRatings;
+                console.log("What the math should be");
+                console.log((3.5 + 1)/3);
+                console.log("Newly Submitted Review: " + parseInt(req.body.rating));
                 console.log("New Rating");
                 console.log(newRating);
 
