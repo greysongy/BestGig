@@ -1,37 +1,45 @@
 var db = require("../models")
 
-module.exports = function(app) {
-    // Here we can find all the info from the model companies
-    app.get("/api/companies", function(req,res) {
-        db.companies.findAll({}).then(function(dbCompanies) {
+// All of the data retrieved in this route is from the companies model in the bestGigs_db
+
+module.exports = function (app) {
+
+    // This returns all of the company entries
+    app.get("/api/companies", function (req, res) {
+        db.companies.findAll({}).then(function (dbCompanies) {
             res.json(dbCompanies)
         })
     });
 
+    // This will route will updata the companies model with data from the req.body
     app.put("/api/companies", function (req, res) {
         console.log(req.body)
+
+        // We will look specifically where the company name is equal to the request body's company name and where the request body's location
         db.companies.findAll({
             where: {
-                company_name: req.body.company_name, 
+                company_name: req.body.company_name,
                 location: req.body.location
             }
-        }).then(function(queriedCompany) {
-            console.log("Queried Company");
-            console.log(queriedCompany);
-            if(queriedCompany.length === 0) {
+            // After we get the specific company lets use it
+        }).then(function (queriedCompany) {
+
+            // If the company searched does not exist, we will create a new entry
+            if (queriedCompany.length === 0) {
                 db.companies.create({
-                    company_name: req.body.company_name, 
-                    average_rating: req.body.rating, 
-                    average_pay_per_hour: req.body.pay_per_hour, 
-                    number_reviews: 1, 
+                    company_name: req.body.company_name,
+                    average_rating: req.body.rating,
+                    average_pay_per_hour: req.body.pay_per_hour,
+                    number_reviews: 1,
                     location: req.body.location
                 }).then(function (dbCompany) {
-                    console.log("Created company");
-                    console.log(dbCompany);
                     res.json(dbCompany)
                 });
             }
-    
+
+            // If the company searched already exists in our database, go here where we will update the company entry with the req.body data.
+
+            // i.e. user submits a 3 star rating Uber in San Francisco that has an avg rating of 4.5. Depending on how many ratings Uber in SF already has, it should bring the rating down by a certain amount
             else {
                 var queriedCompany2 = queriedCompany[0].dataValues;
                 // console.log("Queried Company 2");
@@ -48,65 +56,33 @@ module.exports = function(app) {
                 var newNumRatings = currentNumRatings + 1;
                 console.log("new Num");
                 console.log(newNumRatings);
-                var newPay = (currentPay + parseFloat(req.body.pay_per_hour))/newNumRatings;
+                var newPay = (currentPay + parseFloat(req.body.pay_per_hour)) / newNumRatings;
                 console.log("New pay");
                 console.log(newPay);
-                var newRating = (currentRating + parseInt(req.body.rating))/newNumRatings;
+                var newRating = (currentRating + parseInt(req.body.rating)) / newNumRatings;
                 console.log("New Rating");
                 console.log(newRating);
+
+                // Here the companies model is updated with the new data
                 db.companies.update({
-                    average_rating: newRating, 
-                    average_pay_per_hour: newPay, 
+                    average_rating: newRating,
+                    average_pay_per_hour: newPay,
                     number_reviews: newNumRatings
                 }, {
-                    where: {
-                        company_name: req.body.company_name, 
-                        location: req.body.location
-                    }
-                }).then(function (dbCompany) {
-                    res.json(dbCompany)
-                })
+                        where: {
+                            company_name: req.body.company_name,
+                            location: req.body.location
+                        }
+                    }).then(function (dbCompany) {
+                        res.json(dbCompany)
+                    })
             }
         })
-        })
-        // console.log("Queried Company");
-        // console.log(queriedCompany);
-    //     if(queriedCompany === null) {
-    //         db.companies.create({
-    //             company_name: req.body.company_name, 
-    //             average_rating: req.body.rating, 
-    //             average_pay_per_hour: req.body.pay_per_hour, 
-    //             number_reviews: 1, 
-    //             location: req.body.location
-    //         }).then(function (dbCompany) {
-    //             res.json(dbCompany)
-    //         });
-    //     }
+    })
 
-    //     else {
-    //         var currentRating = queriedCompany.average_rating;
-    //         var currentPay = queriedCompany.average_pay_per_hour;
-    //         var currentNumRatings = queriedCompany.number_reviews;
-    //         var newNumRatings = currentNumRatings++;
-    //         var newPay = (currentPay + req.body.pay_per_hour)/newNumRatings;
-    //         var newRating = (currentRating + req.body.rating)/newNumRatings;
-    //         db.companies.update({
-    //             average_rating: newRating, 
-    //             average_pay_per_hour: newPay, 
-    //             number_reviews: newNumRatings
-    //         }, {
-    //             where: {
-    //                 company_name: req.body.company_name, 
-    //                 location: req.body.location
-    //             }
-    //         }).then(function (dbCompany) {
-    //             res.json(dbCompany)
-    //         })
-    //     }
-    // })
-
-    app.post("/api/companies", function(req, res) {
-        db.companies.create(req.body).then(function(dbCompanies) {
+    // Whenever a new company is entered, their info from the request body will be used to create an entry for them in the database
+    app.post("/api/companies", function (req, res) {
+        db.companies.create(req.body).then(function (dbCompanies) {
             res.json(dbCompanies)
         })
     })
