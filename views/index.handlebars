@@ -1,13 +1,69 @@
 <div class="container">
-<h1>Show me Companies</h1> 
+    <h1>Show me Companies</h1>
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="user-name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="user-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email" class="col-form-label">Email:</label>
+                            <input class="form-control" id="user-email"></textarea>
+                        </div>
 
-<ul>
-{{#each companys}}
-<li> 
-    <p> {{this.id}}. {{this.company_name}}
+                        <!-- TEST SPACE FOR AUTOCOMPLETE -->
+                        <div class="form-location">
+                            <label for="user-email" class="col-form-label">Your Location:</label>
+                            <input type="search" id="city" class="form-control" placeholder="Where are you located?" />
 
-    </p>
-</li>
-{{/each}}
-</ul>
+                            <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
+                            <script>
+                                (function () {
+                                    var placesAutocomplete = places({
+                                        appId: 'pl4TRIIAJFA1',
+                                        apiKey: '959339ddd5da57ac40f40d81051bb8b5',
+                                        container: document.querySelector('#city'),
+                                        templates: {
+                                            value: function (suggestion) {
+                                                return suggestion.name;
+                                            }
+                                        }
+                                    }).configure({
+                                        type: 'city',
+                                        countries: 'us',
+                                        aroundLatLngViaIP: false,
+                                    });
+                                })();
+
+                            </script>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button id = 'submitUser' type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        {{#each companies}}
+        <li>
+            <p> {{this.id}}. Company: {{this.company_name}} </p>
+            <p>Location: {{this.location}}</p>
+
+        </li>
+        {{/each}}
+    </ul>
 </div>

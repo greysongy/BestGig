@@ -11,6 +11,17 @@ module.exports = function (app) {
         })
     });
 
+    app.get("/api/companies/:location", function(req, res) {
+        var location = req.params.location.replace("-", " ")
+        db.companies.findAll({
+            where: {
+                location: location
+            }
+        }).then(function(dbCompanies) {
+            res.json(dbCompanies)
+        })
+    })
+
     // This will route will updata the companies model with data from the req.body
     app.put("/api/companies", function (req, res) {
         console.log(req.body)

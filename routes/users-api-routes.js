@@ -14,6 +14,7 @@ module.exports = function(app) {
     // Adds a new user to the model in mysql
     app.post("/api/users", function(req, res) {
         db.users.create(req.body).then(function(dbUsers) {
+            console.log(dbUsers)
             res.json(dbUsers)
         })
     })

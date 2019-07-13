@@ -1,27 +1,54 @@
 // This file grabs user information to send it to the users-api-route. There it will create a new user entry
 
 $(document).ready(function () {
+    $(window).load(function () {
+        $("#myModal").modal("show");
+    })
 
-    // Here we get the inputs of the companies
-    var nameInput = $("#user-name");
-    var companyInput = $("#company")
-    var ratingInput = $("#rating");
-    var paymentInput = $("#payment")
-    var locationInput = $("#location")
-    // The form used to get the user input
-    var userDataForm = $("#userData")
+    $("#submitUser").on("click", function (event) {
 
-    $(userDataForm).on('submit', function (event) {
-        event.preventDefault();
+        event.preventDefault()
+
+        // Here we get the inputs of the companies
+        var nameInput = $("#user-name").val().trim().toLowerCase();
+        var emailInput = $("#user-email").val()
+        var locationInput = $("#city").val().trim().toLowerCase();
+
+        console.log(emailInput)
+
         var newUserData = {
-            user_name: nameInput.val().trim(),
-            location: locationInput.val().trim()
+            username: nameInput,
+            email: emailInput,
+            location: locationInput
         }
 
-        // Here, the newUserData will be sent in the req.body to the route /api/users in the users-api-route
+        // Here we post the new user data
         $.post("/api/users", newUserData).then(function () {
-            console.log("Updated Users Data")
+            console.log("New User Added!", newUserData.username)
         })
 
+        var companyLocation = locationInput.replace(" ", "-")
+
+        // Using the company location, we can get all the companies from that location using this
+
+        // but now how can we render our page?
+        $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
+            companies = []
+            for (var i = 0; i < dbCompanies.length; i++) {
+                companies.push(dbCompanies[i].dataValues)
+            }
+
+            var hbsObject = {
+                companies: companies
+            }
+            console.log(hbsObject)
+            
+            // ??????????????????
+            res.render("index", hbsObject)
+        })
+
+
+
     })
+
 });
