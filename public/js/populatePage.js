@@ -1,8 +1,9 @@
+// The purpose of this file is to return back companies when a specific location is entered
 
 $(document).ready(function () {
 
-    // Feel free to change the info here! The get is used to grab info from the sql database and post the info on the test.html page.
     $("#search-btn").on("click", function () {
+
         // Grab text from location input
         var location = $("#location-search").val().trim()
         location = location.replace(/\s+/g, "-").toLowerCase();
@@ -27,15 +28,15 @@ $(document).ready(function () {
                 var ratingSum = 0
                 var paySum = 0
                 var length = 0
-                for(var l = 0; l < reviews.length; l++) {
-                    if(reviews[l].company_name === companies[k]) {
-                        ratingSum += parseInt(reviews[l].rating) 
+                for (var l = 0; l < reviews.length; l++) {
+                    if (reviews[l].company_name === companies[k]) {
+                        ratingSum += parseInt(reviews[l].rating)
                         paySum += reviews[l].pay_per_hour
                         length++
                     }
                 }
-                var avgRating = (ratingSum/length).toFixed(2)
-                var avgPayPerHour = (paySum/length).toFixed(2)
+                var avgRating = (ratingSum / length).toFixed(2)
+                var avgPayPerHour = (paySum / length).toFixed(2)
                 console.log(company, "average rating:", avgRating)
                 console.log(company, "average pay per hour:", avgPayPerHour)
                 var companyAndSum = [company, avgRating, avgPayPerHour]
@@ -43,9 +44,9 @@ $(document).ready(function () {
             }
 
             // Now we want to sort the companies by whoever has the highest rating!
-            console.log("Pre-Sort:",companyInfo)
+            console.log("Pre-Sort:", companyInfo)
             companyInfo.sort()
-            console.log("Post-Sort:",companyInfo)
+            console.log("Post-Sort:", companyInfo)
 
             $("#comp-name1").text(companyInfo[0][0])
             $("#comp-avg-rating1").text(companyInfo[0][1])

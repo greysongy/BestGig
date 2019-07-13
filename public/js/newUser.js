@@ -1,35 +1,51 @@
-$(document).ready(function () {
-    // Here we get the inputs of the companies
-    var nameInput = $("#user-name");
-    var companyInput = $("#company")
-    var ratingInput = $("#rating");
-    var paymentInput = $("#payment")
-    var locationInput = $("#location")
-    // The form used to get the user input
-    var userDataForm = $("#userData")
+// This file grabs user information to send it to the users-api-route. There it will create a new user entry
 
-    $(userDataForm).on('submit', function (event) {
-        event.preventDefault();
+$(document).ready(function () {
+    $(window).load(function () {
+        $("#myModal").modal("show");
+    })
+
+    $("#submitUser").on("click", function (event) {
+
+        event.preventDefault()
+
+        // Here we get the inputs of the companies
+        var nameInput = $("#user-name").val().trim().toLowerCase();
+        var emailInput = $("#user-email").val()
+        var locationInput = $("#city").val().trim().toLowerCase();
+
+        // Place all the userData in an object to send 
         var newUserData = {
-            user_name: nameInput.val().trim(),
-            location: locationInput.val().trim()
-            // company: companyInput.val().trim(),
-            // rating: ratingInput.val().trim(),
-            // payment: paymentInput.val().trim()
+            username: nameInput,
+            email: emailInput,
+            location: locationInput
         }
 
-        // var newCompanyData = {
-        //     company_name: companyInput.val().trim(),
-        // }
-        console.log(newUserData)
+        // Here we post the new user data
         $.post("/api/users", newUserData).then(function () {
-            console.log("Updated Users Data")
+            console.log("New User Added!", newUserData.username)
+
+            // Once the post is complete, we will return back data on companies from that location
+            var companyLocation = locationInput.replace(" ", "-")
+
+            $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
+                console.log(dbCompanies)
+                for (var i = 0; i < dbCompanies.length; i++) {
+                    $("#companies").append(`<h1>${dbCompanies[i].company_name}</h1>`)
+                }
+
+            })
+
+
         })
 
-        // Here we send over the company Data which must include
-        $.post("/api/companies", newCompanyData).then(function() {
-            console.log("Updated Companies Data")
-        })
+
+        // Using the company location, we can get all the companies from that location using this
+
+        // but now how can we render our page?
+
+
 
     })
+
 });

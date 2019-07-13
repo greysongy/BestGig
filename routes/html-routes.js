@@ -1,18 +1,19 @@
 var path = require("path");
+var db = require("../models")
 
-module.exports = function(app) {
-    app.get("/", function(req, res) {
-        console.log("Here")
-<<<<<<< HEAD
-        res.sendFile(path.join(__dirname, "../public/index.html"))
+
+// These routes will show a certain html page based on the route request
+
+module.exports = function (app) {
+
+    // The root route will render the index html page (handlebars)
+    // Changed from res.render("home") to res.render("index")
+    app.get("/", function (req, res) {
+        res.render("home")
     })
 
-    app.get("/test", function(req, res) {
-        console.log("Here")
+    // The test route will render the test html page
+    app.get("/test", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/test.html"))
-=======
-        // res.sendFile(path.join(__dirname, "../public/home.html"))
-        res.render("home")
->>>>>>> ffcb01c4704aa0214eb6f9e40f21e5cf53445e62
     })
 }
