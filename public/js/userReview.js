@@ -3,22 +3,24 @@
 $(document).ready(function () {
 
     // Grab all of our info
-    var nameInput = $("#name");
-    var companyInput = $("#company");
-    var ratingInput = $("#rating");
-    var payInput = $("#pay");
-    var locationInput = $("#location");
 
     $("#submitReview").on("click", function (event) {
         event.preventDefault();
+        var nameInput = $("#name").val().trim().toLowerCase();
+        var companyInput = $("#company").val().trim().toLowerCase();
+        var payInput = $("#pay").val().trim();
+        var ratingInput = $("#rating").val().trim();
+        var locationInput = $("#location").val().trim().toLowerCase();
+       
+
 
         // Put our info in the package newReview
         var newReview = {
-            company_name: companyInput.val().trim().toLowerCase(),
-            username: nameInput.val().trim().toLowerCase(),
-            pay_per_hour: parseFloat(payInput.val().trim()),
-            rating: parseInt(ratingInput.val().trim(), 10),
-            location: locationInput.val().trim().toLowerCase()
+            company_name: companyInput,
+            username: nameInput,
+            pay_per_hour: parseFloat(payInput),
+            rating: parseInt(ratingInput, 10),
+            location: locationInput
         };
 
         console.log("New Review");
@@ -32,7 +34,7 @@ $(document).ready(function () {
         })
             // Once the promise has been fulfilled, now we will reload the test route
             .then(function () {
-                window.location.href = "/test";
+                console.log("It worked!")
             })
 
         // Here we will send in a new review to the route /api/reviews in the form of a data package
