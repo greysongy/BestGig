@@ -33,13 +33,17 @@ $(document).ready(function () {
             var companyLocation = locationInput.replace(" ", "-")
 
             $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
+                console.log("List of companies");
                 console.log(dbCompanies)
                 // Here is where we sort by pay
 
                 for (var i = 0; i < dbCompanies.length; i++) {
+                    var splitName = dbCompanies[i].company_name.toLowerCase().split(" ").join().replace(/,/, "");
+                    console.log("rearranged name");
+                    console.log(splitName);
                     $("#results").append(`<div class="row mt-5">
                     <div class="col-sm-2 ml-5" style="background-color: grey;">
-                        <img src="https://via.placeholder.com/150">
+                        <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
                     <div class="col-sm-4 ml-2"><div class="container">
                     <div class="row">
