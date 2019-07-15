@@ -96,3 +96,14 @@ body {
 a {
     width: 13%;
 }
+
+#results {
+    /* background: white; */
+    margin-top: 3%;
+    /* border: solid black; */
+}
+
+.row {
+    background: white;
+    /* border: solid black; */
+}
