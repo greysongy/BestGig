@@ -64,12 +64,12 @@ $(document).ready(function () {
                 <div class="col-sm-2 ml-5" style="background-color: grey;">
                     <img src="https://logo.clearbit.com/${splitName}.com">
                 </div>
-                <div class="col-sm-4 ml-2"><div class="container">
+                
+                <div class="col-sm-6 ml-2"><div class="container">
                 <div class="row">
                     <div class="col-sm">
-
                         <div class="row mt-2" style="background-color: peachpuff;">
-                            <div class="col-sm-4" id="companyName">${sortedCompanies[i].company_name + " " + sortedCompanies[i].location}</div>
+                            <div class="col-sm" id="companyName">${sortedCompanies[i].company_name + " " + sortedCompanies[i].location}</div>
                         </div>
                         <div class="row mt-3">
                             <h1>Average Rating: ${sortedCompanies[i].average_rating}<h1>
@@ -78,12 +78,12 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <div class="col-sm-2 ml-2" id="payBox">
-            <button type="button" class="btn btn-outline-success text-dark">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
-        </div>
-        <div class="col-sm-2 ml-2" id="linkBox">
-            <div id="linkId">I am link</div>
-        </div>
-            </div>
+                    <button type="button" class="btn btn-outline-success text-dark">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
+                </div>
+                <div class="col-sm-2 ml-2" id="linkBox">
+                        <div id="linkId">I am link</div>
+                </div>
+                </div>
     </div>`);
                 for (var j = 0; j < roundedRating; j++) {
                     $('#compRating' + i).append(`<i class="fa fa-star">`);
