@@ -80,7 +80,7 @@ $(document).ready(function () {
                     <div class="col-sm-2 ml-5" style="background-color: grey;">
                         <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
-                    <div class="col-sm-4 ml-2"><div class="container">
+                    <div class="col-sm-8 ml-2"><div class="container">
                     <div class="row">
                         <div class="col-sm">
                             <div class="row mt-2" style="background-color: peachpuff;">
@@ -92,14 +92,15 @@ $(document).ready(function () {
                             </div>
                         </div>
     
-                    </div>
-                </div><div class="col-sm-2 ml-2" id="payBox">
-                <button type="button" class="btn btn-outline-success text-dark">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
-            </div>
-            <div class="col-sm-2 ml-2" id="linkBox">
-                <div id="linkId">I am link</div>
-            </div>
-        </div>`)
+                        <div class="col-sm ml-2" id="payBox">
+                            <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
+                        </div>
+                        <div class="col-sm ml-2" id="linkBox">
+                            <div id="linkId"> <button type="button" class="btn btn-outline-success text-dark" id="newLink">
+                            No Account? 
+                            <p>Sign up!</button></div>
+                        </div>
+                    </div>`)
 
                     for (var j = 0; j < roundedRating; j++) {
                         $('#compRating' + i).append(`<i class="fa fa-star">`);

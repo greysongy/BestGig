@@ -2,7 +2,7 @@ body {
     background-color: lightblue;
 }
 
-.container {
+#main-container {
     margin-top: 3%;
     background-color: white;
 
@@ -28,29 +28,29 @@ body {
 
 #payBox {
     margin-top: 2%;
-    height: 25%;
+    height: 150px;
     border-radius: 100px;
-    background-color: MediumSeaGreen;
+    /* background-color: MediumSeaGreen; */
 }
 
-#payRate {
+ /* #payRate {
     margin-top: 2%;
     margin-left: 20%;
     font-size: 25pt;
-}
+} */
 
 #linkBox{
     margin-top: 2%;
-    height: 25%;
+    height: 150px;
     border-radius: 100px;
-    background-color: Teal;
-}
+    /* background-color: Teal; */
+} 
 
-#linkId {
+/* #linkId {
     margin-top: 2%;
     margin-left: 20%;
     font-size: 25pt;
-}
+} */
 
 .fa-star {
     margin-left: 5px;
@@ -66,3 +66,29 @@ body {
 .modal-header .close {
     display:none;
   }
+
+  #logo_image {
+    align: center;
+    width: 13%;
+    height: 13%;
+    border-radius: 50px;
+    /* margin-top: 0%; */
+}
+
+#title {
+    font-family: 'Boogaloo', cursive;
+    font-size: 100px;
+    margin-top: 5%;
+}
+
+.modal {
+    margin-top: 10%;
+}
+
+#ratePay {
+    font-size: 65pt;
+}
+
+#newLink {
+    font-size: 30pt;
+}

@@ -57,12 +57,12 @@
     </div>
 </div>
 <!-- Modal for User Reviews -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
-    data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Submit Your Review</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -100,48 +100,60 @@
     </div>
 </div>
 
-<div class="container pb-5" id='main-container'>
+{{!-- <div class="container pb-5" id='main-container'> --}}
 
-    <!-- beginning of search bar, filter, and review box -->
-    <div class="row">
-        <div class="col-sm-9 mt-5 ml-2">
-            <div class="input-group md-form form-sm form-2 pl-0">
-                <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search" id = "company-search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id = "submit">Search</button>
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Filter
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Rating</a>
-                        <a class="dropdown-item" href="#">Pay</a>
-                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                        <div class="dropdown-divider"></div>
+{{!-- LOGO AREA --}}
+<div class="container mt-4 d-flex justify-content-center">
+
+    <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image">
+    <h1 id="title"> BEST GIG </h1>
+
+</div>
+<center>
+    <div class="w-75 pb-5" id='main-container'>
+
+        <!-- beginning of search bar, filter, and review box -->
+        <div class="row">
+            <div class="col-sm-9 mt-5 ml-2">
+                <div class="input-group md-form form-sm form-2 pl-5">
+                    <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search"
+                        aria-label="Search" id="company-search">
+                    <button class="btn btn-warning my-2 my-sm-0" type="submit" id="submit">Search</button>
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Filter
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Rating</a>
+                            <a class="dropdown-item" href="#">Pay</a>
+                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                            <div class="dropdown-divider"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2 mt-5">
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
-                id="userReview">
-                Earn Points!
-            </button>
-            <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
+            <div class="col-sm-2 mt-5">
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
+                    id="userReview">
+                    Earn Points!
+                </button>
+                <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
 
-            <div class="modal" id="exampleModal">
+                <div class="modal" id="exampleModal">
 
+                </div>
             </div>
         </div>
+        <!-- end of search bar, filter, and review box -->
+
+        {{!-- Beginning of results --}}
+        <div id="results">
+        </div>
+
     </div>
-    <!-- end of search bar, filter, and review box -->
-
-{{!-- Beginning of results --}}
-    <div class="container" id="results">
     </div>
-
-</div>
-
+</center>
 {{!-- <script>
     $.ajax({
         url: "api/companies",
@@ -163,3 +175,6 @@
         }
     })
 </script> --}}
+
+
+ 
