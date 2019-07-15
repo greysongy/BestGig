@@ -78,22 +78,26 @@ $(document).ready(function () {
                     //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
                     $("#results").append(` <div class="container">
                     <div class="row mt-5">
-                    <div class="col-sm-2 ml-5 mt-2"">
+                    <div class="col-sm-2 ml-5 mt-5"">
                         <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
 
  
                         <div class="col-sm-3">
-                            <div class="row mt-2" style="background-color: peachpuff;">
-                                <div class="col-sm mini-box" id="companyName">${sortedCompanies[i].company_name}</div>
+                            <div class="row mt-2" >
+                                <div class="col-sm mt-2 mini-box" id="companyName">${sortedCompanies[i].company_name}</div>
                             </div>
                         </div>
     
                         <div class="col-sm ml-2 mt-4" id="payBox">
-                            <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
+                            Average Pay: <br>
+                            <button type="button" class="btn btn-outline-success text-dark" id="ratePay"> 
+                            
+                            $${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
                         </div>
                             
-                        <div class="col-sm mt-4" id="compRating${i}"></div>
+                        <div class="col-sm mt-4" id="compRating${i}">Average Rating: <br></div>
+                        
 
                         </div> 
                     </div>`)
