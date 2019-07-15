@@ -62,7 +62,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Submit Your Review</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -100,7 +100,16 @@
     </div>
 </div>
 
-<div class="container pb-5" id='main-container'>
+{{!-- <div class="container pb-5" id='main-container'> --}}
+
+{{!-- LOGO AREA --}}
+<div class="container mt-4 d-flex justify-content-center">
+
+    <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image">
+    <h1 id="title"> BEST GIG </h1>
+
+</div>
+<center><div class="w-75 pb-5" id='main-container'>
 
     <!-- beginning of search bar, filter, and review box -->
     <div class="row">
@@ -137,11 +146,11 @@
     <!-- end of search bar, filter, and review box -->
 
 {{!-- Beginning of results --}}
-    <div class="container" id="results">
+    <div  id="results">
     </div>
 
 </div>
-
+</div></center>
 {{!-- <script>
     $.ajax({
         url: "api/companies",

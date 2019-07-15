@@ -2,7 +2,7 @@ body {
     background-color: lightblue;
 }
 
-.container {
+#main-container {
     margin-top: 3%;
     background-color: white;
 
@@ -66,3 +66,21 @@ body {
 .modal-header .close {
     display:none;
   }
+
+  #logo_image {
+    align: center;
+    width: 13%;
+    height: 13%;
+    border-radius: 50px;
+    /* margin-top: 0%; */
+}
+
+#title {
+    font-family: 'Boogaloo', cursive;
+    font-size: 100px;
+    margin-top: 5%;
+}
+
+.modal {
+    margin-top: 10%;
+}
