@@ -76,10 +76,12 @@ $(document).ready(function () {
                     var rating = sortedCompanies[i].average_rating;
                     var roundedRating = Math.round(rating);
                     //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
-                    $("#results").append(`<div class="row mt-5">
-                    <div class="col-sm-2 ml-5" style="background-color: grey;">
+                    $("#results").append(`
+                    <div class="row mt-5">
+                    <div class="col-sm-2 ml-5"">
                         <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
+
                     <div class="col-sm-6 ml-2"><div class="container">
                     <div class="row">
                         <div class="col-sm">
@@ -95,9 +97,9 @@ $(document).ready(function () {
                         <div class="col-sm ml-2" id="payBox">
                             <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
                         </div>
-                        <div class="col-sm ml-2"> 
-                        <h1>Average Rating: ${sortedCompanies[i].average_rating}<h1>
-                        <div class="col-sm mini-box" id="compRating${i}"></div>
+                        <div class="col-sm ml-2">
+                            <h1>Average Rating: ${sortedCompanies[i].average_rating}<h1>
+                            <div class="col-sm mini-box" id="compRating${i}"></div>
                         </div>
                     </div>`)
 
