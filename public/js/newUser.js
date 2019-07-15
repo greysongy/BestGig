@@ -82,25 +82,19 @@ $(document).ready(function () {
                         <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
 
-                    <div class="col-sm-6 ml-2"><div class="container">
-                    <div class="row">
-                        <div class="col-sm">
+ 
+                        <div class="col-sm-4">
                             <div class="row mt-2" style="background-color: peachpuff;">
                                 <div class="col-sm mini-box" id="companyName">${sortedCompanies[i].company_name}</div>
-                            </div>
-                            <div class="row mt-3">
-                            <h1>Average Rating: ${sortedCompanies[i].average_rating}<h1>
-                                <div class="col-sm mini-box" id="compRating${i}"></div>
                             </div>
                         </div>
     
                         <div class="col-sm ml-2" id="payBox">
                             <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
                         </div>
-                        <div class="col-sm ml-2">
-                            <h1>Average Rating: ${sortedCompanies[i].average_rating}<h1>
-                            <div class="col-sm mini-box" id="compRating${i}"></div>
-                        </div>
+                            
+                        <div class="col-sm" id="compRating${i}"></div>
+
                     </div>`)
 
                     for (var j = 0; j < roundedRating; j++) {

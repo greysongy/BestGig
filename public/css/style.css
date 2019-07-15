@@ -55,7 +55,7 @@ body {
 .fa-star {
     margin-left: 5px;
     color: goldenrod;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 
@@ -69,10 +69,10 @@ body {
 
   #logo_image {
     align: center;
-    width: 13%;
-    height: 13%;
+    /* width: 13%;
+    height: 13%; */
     border-radius: 50px;
-    /* margin-top: 0%; */
+    margin-top: -45px;
 }
 
 #title {
@@ -91,4 +91,8 @@ body {
 
 #newLink {
     font-size: 100%;
+}
+
+a {
+    width: 13%;
 }
