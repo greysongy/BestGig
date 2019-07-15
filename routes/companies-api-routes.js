@@ -22,6 +22,22 @@ module.exports = function (app) {
         })
     })
 
+    app.get("/api/companies/cname/:name", function(req, res) {
+        console.log("We got to the point where the companies were queried based on name");
+        // console.log("Company Name");
+        // console.log(req.params.company_name);
+        console.log("Req Params");
+        console.log(req.params);
+        var name = req.params.name;
+        db.companies.findAll({
+            where: {
+                company_name: name
+            }
+        }).then(function(dbCompanies) {
+            res.json(dbCompanies);
+        })
+    })
+
     // This will route will updata the companies model with data from the req.body
     app.put("/api/companies", function (req, res) {
         console.log(req.body)

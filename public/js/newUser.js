@@ -33,17 +33,10 @@ $(document).ready(function () {
             var companyLocation = locationInput.replace(" ", "-")
 
             $.get("/api/companies/" + companyLocation).then(function (dbCompanies) {
-                console.log("List of companies");
-                console.log(dbCompanies)
-                // Here is where we sort by pay, greyson: I'm thinking we create a new array and then use that for the rest of the calculations
-
-                var newdbCompanies;
-                console.log("Mergesort Result");
-                console.log(mergeSort(dbCompanies));
+                // Currently sorting by pay
                 var sortedCompanies = mergeSort(dbCompanies);
-                console.log("Did we get here");
 
-                //sorted in opposite direction
+                //imported code for merge sort
                 function mergeSort(arr) {
                     if (arr.length < 2)
                         return arr;
@@ -55,6 +48,7 @@ $(document).ready(function () {
                     return merge(mergeSort(left), mergeSort(right));
                 }
 
+                //imported code for merge sort
                 function merge(left, right) {
                     var result = [];
 
@@ -75,14 +69,11 @@ $(document).ready(function () {
                     return result;
                 }
 
+                //for loop now iterates in opposite direction, since merge sort sorts from smalles to largest value
                 for (var i = sortedCompanies.length - 1; i >= 0; i--) {
                     //code to format name when it's made up of multiple words
-                    console.log("Current company");
-                    console.log("I: " + i);
-                    console.log(sortedCompanies[i]);
                     var splitName = sortedCompanies[i].company_name.toLowerCase().split(" ").join().replace(/,/, "");
-                    console.log("rearranged name");
-                    console.log(splitName);
+                    //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
                     $("#results").append(`<div class="row mt-5">
                     <div class="col-sm-2 ml-5" style="background-color: grey;">
                         <img src="https://logo.clearbit.com/${splitName}.com">
