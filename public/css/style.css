@@ -23,7 +23,7 @@ body {
 }
 
 #companyName {
-    font-size: 25pt;
+    font-size: 20pt;
 }
 
 #payBox {
@@ -55,7 +55,7 @@ body {
 .fa-star {
     margin-left: 5px;
     color: goldenrod;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 
@@ -69,10 +69,10 @@ body {
 
   #logo_image {
     align: center;
-    width: 13%;
-    height: 13%;
+    /* width: 13%;
+    height: 13%; */
     border-radius: 50px;
-    /* margin-top: 0%; */
+    margin-top: -45px;
 }
 
 #title {
@@ -86,9 +86,24 @@ body {
 }
 
 #ratePay {
-    font-size: 65pt;
+    font-size: 200%;
 }
 
 #newLink {
-    font-size: 30pt;
+    font-size: 100%;
+}
+
+a {
+    width: 13%;
+}
+
+#results {
+    /* background: white; */
+    margin-top: 3%;
+    /* border: solid black; */
+}
+
+.row {
+    background: white;
+    /* border: solid black; */
 }
