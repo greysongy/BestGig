@@ -105,12 +105,14 @@
 {{!-- LOGO AREA --}}
 <div class="container mt-4 d-flex justify-content-center">
 
-    <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image">
+    <a href="/">
+        <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image" height="300" width="300">
+    </a>
     <h1 id="title"> BEST GIG </h1>
 
 </div>
 <center>
-    <div class="w-75 pb-5" id='main-container'>
+    <div class="w-75 pb-5 pl-3 pr-3" id='main-container'>
 
         <!-- beginning of search bar, filter, and review box -->
         <div class="row">
@@ -119,18 +121,7 @@
                     <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search"
                         aria-label="Search" id="company-search">
                     <button class="btn btn-warning my-2 my-sm-0" type="submit" id="submit">Search</button>
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Filter
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Rating</a>
-                            <a class="dropdown-item" href="#">Pay</a>
-                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                            <div class="dropdown-divider"></div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="col-sm-2 mt-5">
@@ -147,12 +138,13 @@
         </div>
         <!-- end of search bar, filter, and review box -->
 
-        {{!-- Beginning of results --}}
-        <div id="results">
-        </div>
+       
 
     </div>
-    </div>
+     {{!-- Beginning of results --}}
+        <div class="container mt-3" id="results">
+        </div>
+    {{!-- </div> --}}
 </center>
 {{!-- <script>
     $.ajax({
