@@ -33,7 +33,7 @@ body {
     background-color: MediumSeaGreen;
 }
 
-#payRate {
+ /* #payRate {
     margin-top: 2%;
     margin-left: 20%;
     font-size: 25pt;
@@ -44,12 +44,12 @@ body {
     height: 25%;
     border-radius: 100px;
     background-color: Teal;
-}
+} 
 
 #linkId {
     margin-top: 2%;
     margin-left: 20%;
-    font-size: 25pt;
+    font-size: 25pt; */
 }
 
 .fa-star {

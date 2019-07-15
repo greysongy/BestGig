@@ -92,14 +92,13 @@ $(document).ready(function () {
                             </div>
                         </div>
     
-                    </div>
-                </div><div class="col-sm-2 ml-2" id="payBox">
-                <button type="button" class="btn btn-outline-success text-dark">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
-            </div>
-            <div class="col-sm-2 ml-2" id="linkBox">
-                <div id="linkId">I am link</div>
-            </div>
-        </div>`)
+                        <div class="col-sm-2 ml-2" id="payBox">
+                            <button type="button" class="btn btn-outline-success text-dark">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
+                        </div>
+                        <div class="col-sm-2 ml-2" id="linkBox">
+                            <div id="linkId">I am link</div>
+                        </div>
+                    </div>`)
 
                     for (var j = 0; j < roundedRating; j++) {
                         $('#compRating' + i).append(`<i class="fa fa-star">`);
