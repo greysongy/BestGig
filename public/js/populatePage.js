@@ -56,6 +56,9 @@ $(document).ready(function () {
             for (var i = sortedCompanies.length - 1; i >= 0; i--) {
                 //code to format name when it's made up of multiple words
                 var splitName = sortedCompanies[i].company_name.toLowerCase().split(" ").join().replace(/,/, "");
+                //code to get and round rating
+                var rating = sortedCompanies[i].average_rating;
+                var roundedRating = Math.round(rating);
                 //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
                 $("#results").append(`<div class="row mt-5">
                 <div class="col-sm-2 ml-5" style="background-color: grey;">
@@ -68,8 +71,8 @@ $(document).ready(function () {
                             <div class="col-sm mini-box" id="companyName">${sortedCompanies[i].company_name + " " + sortedCompanies[i].location}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-sm mini-box" id="rating"><i class="fa fa-star"> </i> <i class="fa fa-star">
-                                </i> <i class="fa fa-star"> </i></div>
+                            <h1>Average Rating: ${sortedCompanies[i].average_rating}<h1>
+                            <div class="col-sm mini-box" id="compRating${i}"><div>
                         </div>
                     </div>
 
@@ -80,7 +83,10 @@ $(document).ready(function () {
         <div class="col-sm-2 ml-2" id="linkBox">
             <div id="linkId">I am link</div>
         </div>
-    </div>`)
+    </div>`);   
+                for(var j = 0; j < roundedRating; j++) {
+                    $('#compRating' + i).append(`<i class="fa fa-star">`);
+                }
             }
 
             // Now that we have all the reviews for companies at this location, we now want to have a list of all the companies
