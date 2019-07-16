@@ -20,6 +20,7 @@ body {
 
 #userReview {
     width: 150%;
+    margin-bottom: 1pt;
 }
 
 #companyName {
@@ -73,12 +74,15 @@ body {
     height: 13%; */
     border-radius: 50px;
     margin-top: -45px;
+    position: relative;
+    z-index: 1;
 }
 
 #title {
     font-family: 'Boogaloo', cursive;
     font-size: 100px !important;
     margin-top: 5%;
+    z-index: 2;
 }
 
 .modal {
@@ -132,7 +136,10 @@ a {
 }
 
 #location-user {
+    position: relative;
     font-size: 23pt;
     color:red; 
-    z-index:1;
+    z-index:3;
+    top: 150px;
+    right: 300px;
  }
