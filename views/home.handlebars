@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group">
                         <label>Rating</label>
-                        <input class="form-control" id="rating" placeholder="Rating">
+                            <center><input type="text" class="kv-uni-star rating-loading" value="3" data-size="lg" id="rating"></center>
                     </div>
                     <div class="form-group">
                         <label>Pay</label>
@@ -156,15 +156,17 @@
     <a href="/">
         <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image" height="300" width="300">
     </a>
-    <h1 id="title"> BEST GIG </h1>
-
+    <h1 id="title" class="element"> BEST GIG </h1>
+    <div id="location-user" class="element"> Hello</div>
 </div>
-<center class="pt-2 mt-5" id="center">
+
+
+<center class="pt-1 mt-5" id="center">
     <div class="w-75 pl-3 pr-3" id='main-container'>
 
-        <!-- beginning of search bar, filter, and review box -->
+<!-- beginning of search bar, filter, and review box -->
         <div class="row">
-            <div class="col-sm-9 mt-4 ml-2">
+            <div class="col-sm-9 mt-5 ml-2">
                 <div class="input-group md-form form-sm form-2 pl-5">
                     <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search"
                         aria-label="Search" id="company-search">
@@ -206,28 +208,55 @@
 
     </div>
     {{!-- Beginning of results --}}
-    <div class="container mt-3" id="results">
+    <div class="container mt-3" >
+        <div id="results"></div>
     </div>
     {{!-- </div> --}}
 </center>
-{{!-- <script>
-    $.ajax({
-        url: "api/companies",
-        type: "GET"
-    }).then(function (dbCompanies) {
-        console.log("saturday morning", dbCompanies)
 
-        function comparePayPerHour(a, b) {
-            return a.average_pay_per_hour - b.average_pay_per_hour;
-        }
 
-        var sortedCompanies = dbCompanies.sort(comparePayPerHour);
-        console.log("sorted our companies :-)", sortedCompanies);
-        for (var i = 0; i < 4; i++) {
-            var titleh1 = $("<h1>")
-            titleh1.text(sortedCompanies[i].company_name)
-            console.log("about to apend to page", titleh1)
-            $("#results").append(titleh1)
-        }
-    })
-</script> --}}
+
+
+
+<script>
+    $(document).on('ready', function () {
+        $('.kv-gly-star').rating({
+            containerClass: 'is-star'
+        });
+        $('.kv-gly-heart').rating({
+            containerClass: 'is-heart',
+            defaultCaption: '{rating} hearts',
+            starCaptions: function (rating) {
+                return rating == 1 ? 'One heart' : rating + ' hearts';
+            },
+            filledStar: '<i class="glyphicon glyphicon-heart"></i>',
+            emptyStar: '<i class="glyphicon glyphicon-heart-empty"></i>'
+        });
+        $('.kv-fa').rating({
+            theme: 'krajee-fa',
+            filledStar: '<i class="fa fa-star"></i>',
+            emptyStar: '<i class="fa fa-star-o"></i>'
+        });
+
+        $('.kv-uni-star').rating({
+            theme: 'krajee-uni',
+            filledStar: '&#x2605;',
+            emptyStar: '&#x2606;'
+        });
+
+        $('.kv-svg').rating({
+            theme: 'krajee-svg',
+            filledStar: '<span class="krajee-icon krajee-icon-star"></span>',
+            emptyStar: '<span class="krajee-icon krajee-icon-star"></span>'
+        });
+
+
+        $('.rating,.kv-gly-star,.kv-gly-heart,.kv-uni-star,.kv-uni-rook,.kv-fa,.kv-fa-heart,.kv-svg,.kv-svg-heart').on(
+                'change', function () {
+                    console.log('Rating selected: ' + $(this).val());
+                });
+    });
+</script>
+</html>
+
+
