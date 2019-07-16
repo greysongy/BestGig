@@ -101,11 +101,14 @@ a {
     /* background: white; */
     margin-top: 3%;
     /* border: solid black; */
+    /* background: white; */
+    /* border: solid black;  */
 }
 
-.row {
+.wrapper {
+    border:solid black;
+    margin-top: 2%;
     background: white;
-    border: solid black;
 }
 
 #center {

@@ -76,7 +76,7 @@ $(document).ready(function () {
                     var rating = sortedCompanies[i].average_rating;
                     var roundedRating = Math.round(rating);
                     //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
-                    $("#results").append(` <div class="container">
+                    $("#results").append(` <div class="wrapper">
                     <div class="row mt-5">
                     <div class="col-sm-2 ml-5 mt-2 align-middle logo">
                         <img src="https://logo.clearbit.com/${splitName}.com">
@@ -102,7 +102,7 @@ $(document).ready(function () {
                                 Average Rating: </font> <br> <br>
                         </div>
                         
-
+</div>
                         </div> 
                     </div>`)
 
