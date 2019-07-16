@@ -69,17 +69,22 @@ $(document).ready(function () {
    
 
                     <div class="col-sm-4">
-                        <div class="row mt-2" style="background-color: peachpuff;">
+                        <div class="row mt-2" >
                             <div class="col-sm mini-box" id="companyName">${sortedCompanies[i].company_name + " " + sortedCompanies[i].location}</div>
                         </div>
   
                     </div>
 
                     <div class="col-sm-2 ml-2 mt-4" id="payBox">
+                    <font size="5">
+                    Average Pay: </font> <br><br>
                         <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
                     </div>
 
-                    <div class="col-sm-3 mt-4 " id="compRating${i}"><div>
+                    <div class="col-sm-3 mt-4 " id="compRating${i}"> 
+                    <font size="5">
+                    Average Rating: </font> <br> <br>
+                    <div>
 
 
     </div>`);
