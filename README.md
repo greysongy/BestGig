@@ -17,7 +17,7 @@ The purpose of BestGigs is to support hundreds of thousands of people who work i
 ## Author links
 ### Adrienne Liu
 * [GitHub](https://github.com/adrienneliu)
-* [LinkedIn]()
+* [LinkedIn](https://www.linkedin.com/in/liu-adrienne/)
 
 ### Daniel Chicchon
 * [GitHub](https://github.com/dchicchon)
@@ -25,9 +25,9 @@ The purpose of BestGigs is to support hundreds of thousands of people who work i
 
 ### Greyson Genhard-Young
 * [GitHub](https://github.com/greysongy)
-* [LinkedIn]()
+* [LinkedIn](https://www.linkedin.com/in/greyson-gerhard-young/)
 
 ### Joey Badua
 * [GitHub](https://github.com/joannebadua)
-* [LinkedIn](https://www.linkedin.com/in/greyson-gerhard-young/)
+* [LinkedIn](https://www.linkedin.com/in/joey-badua-b24b2729/)
 
