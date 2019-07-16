@@ -43,7 +43,6 @@
                                     aroundLatLngViaIP: false,
                                 });
                             })();
-
                         </script>
                     </div>
                 </form>
@@ -170,7 +169,7 @@
         <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image" height="300" width="300">
     </a>
     <h1 id="title" class="element"> BEST GIG </h1>
-    <div id="location-user" class="element"> Hello</div>
+    <div id="location-user" class="element"> </div>
 </div>
 
 
@@ -221,7 +220,7 @@
 
     </div>
     {{!-- Beginning of results --}}
-    <div class="container mt-3" >
+    <div class="container mt-3 pb-5" >
         <div id="results"></div>
     </div>
     {{!-- </div> --}}
@@ -250,20 +249,16 @@
             filledStar: '<i class="fa fa-star"></i>',
             emptyStar: '<i class="fa fa-star-o"></i>'
         });
-
         $('.kv-uni-star').rating({
             theme: 'krajee-uni',
             filledStar: '&#x2605;',
             emptyStar: '&#x2606;'
         });
-
         $('.kv-svg').rating({
             theme: 'krajee-svg',
             filledStar: '<span class="krajee-icon krajee-icon-star"></span>',
             emptyStar: '<span class="krajee-icon krajee-icon-star"></span>'
         });
-
-
         $('.rating,.kv-gly-star,.kv-gly-heart,.kv-uni-star,.kv-uni-rook,.kv-fa,.kv-fa-heart,.kv-svg,.kv-svg-heart').on(
                 'change', function () {
                     console.log('Rating selected: ' + $(this).val());
@@ -271,5 +266,3 @@
     });
 </script>
 </html>
-
-

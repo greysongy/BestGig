@@ -20,6 +20,7 @@ body {
 
 #userReview {
     width: 150%;
+    margin-bottom: 1pt;
 }
 
 #companyName {
@@ -73,12 +74,15 @@ body {
     height: 13%; */
     border-radius: 50px;
     margin-top: -45px;
+    position: relative;
+    z-index: 1;
 }
 
 #title {
     font-family: 'Boogaloo', cursive;
     font-size: 100px !important;
     margin-top: 5%;
+    z-index: 2;
 }
 
 .modal {
@@ -99,7 +103,7 @@ a {
 
 #results {
     /* background: white; */
-    margin-top: 3%;
+    /* margin-top: 3%; */
     /* border: solid black; */
     /* background: white; */
     /* border: solid black;  */
@@ -132,7 +136,11 @@ a {
 }
 
 #location-user {
-    font-size: 23pt;
-    color:red; 
-    z-index:1;
+    position: relative;
+    font-size: 55pt;
+    color: #dee2e6; 
+    z-index:3;
+    top: 115px;
+    right: 200pt;
+    font-family: 'Dancing Script', cursive;
  }

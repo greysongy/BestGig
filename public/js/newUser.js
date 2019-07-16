@@ -78,7 +78,7 @@ $(document).ready(function () {
                     console.log(sortedCompanies);
                     //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
                     $("#results").append(` <div class="wrapper">
-                    <div class="row mt-5">
+                    <div class="row mt-2">
                     <div class="col-sm-2 ml-5 mt-2 align-middle logo">
                         <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
@@ -87,8 +87,6 @@ $(document).ready(function () {
                         <div class="col-sm-3">
                             <div class="row mt-2" >
                                 <div class="col-sm mt-2 mini-box" id="companyName">
-                                <font size="9">
-                                 ${sortedCompanies[i].company_name} </font><br>
                                 <font size="5">
                                 Number of Reviews: ${sortedCompanies[i].number_reviews} </font></div>
                                 
@@ -109,18 +107,16 @@ $(document).ready(function () {
                                 Average Rating: </font> <br> <br>
                         </div>
                         
-</div>
+                        </div>
                         </div> 
                     </div>`)
-
-
 
 
                     for (var j = 0; j < roundedRating; j++) {
                         $('#compRating' + i).append(`<i class="fa fa-star">`);
                     }
                 }
-
+                $("#location-user").append(`in ${locationInput}`);
             })
 
 
