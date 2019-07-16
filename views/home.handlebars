@@ -107,8 +107,10 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">TEST ME</h5>
+            <div class="modal-header text-center ">
+                <h5 class="modal-title" id="exampleModalLabel">Input a distance.</h5>
+                <img src="asset/img/arrow.png">
+                <h5 class="text-success mt-1">Get a $ projection.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -116,7 +118,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-   
+
 
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
@@ -125,16 +127,26 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                                 <button class="dropdown-item" type="button">Uber</button>
-                                <button class="dropdown-item" type="button">Uber</button>
-                                <button class="dropdown-item" type="button">Uber</button>
                             </div>
                         </div>
 
 
                     </div>
-                    <div class="form-group mt-5">
+                    <div class="form-group mt-2">
                         <label>Trip Distance</label>
-                        <input class="form-control" id="company" placeholder="Distance (1-50 mi)">
+                        <input class="form-control" id="distance" placeholder="Distance (1-50 mi)">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <img src="asset/img/mlModel2.png">
+                    </div>
+
+                    <div>
+                        <div class="row">
+                            <button type="button" class="btn btn-success mt-2" id="calcEarnings">Calculate
+                                Earnings</button>
+                            <h5 class="text-success ml-2 mt-3" id="fare"></h5>
+                        </div>
                     </div>
 
                 </form>
@@ -143,6 +155,7 @@
             </div>
             <div class="modal-footer">
                 <button id='exitModal' type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                {{!-- <h5 class = "text-success" id = "fare"></h5> --}}
             </div>
         </div>
     </div>
@@ -191,7 +204,7 @@
                 <div class="row">
                     <button type="button" class="btn btn-outline-primary" data-toggle="modal"
                         data-target="#machineLearning" id="userReview">
-                        Try our ML Modal!
+                        Try our ML Model!
                     </button>
 
                     <div class="modal" id="machineLearning">
