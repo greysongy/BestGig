@@ -43,7 +43,6 @@
                                     aroundLatLngViaIP: false,
                                 });
                             })();
-
                         </script>
                     </div>
                 </form>
@@ -79,7 +78,7 @@
                     </div>
                     <div class="form-group">
                         <label>Rating</label>
-                        <input class="form-control" id="rating" placeholder="Rating">
+                            <center><input type="text" class="kv-uni-star rating-loading" value="3" data-size="lg" id="rating"></center>
                     </div>
                     <div class="form-group">
                         <label>Pay</label>
@@ -100,23 +99,86 @@
     </div>
 </div>
 
+
+
+<!-- Modal for Machine Learning -->
+<div class="modal fade" id="machineLearning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center ">
+                <h5 class="modal-title" id="exampleModalLabel">Input a distance.</h5>
+                <img src="asset/img/arrow.png">
+                <h5 class="text-success mt-1">Get a $ projection.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 350pt;">
+                                Companies
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button">Uber</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>Trip Distance</label>
+                        <input class="form-control" id="distance" placeholder="Distance (1-50 mi)">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <img src="asset/img/mlModel2.png">
+                    </div>
+
+                    <div>
+                        <div class="row">
+                            <button type="button" class="btn btn-success mt-2" id="calcEarnings">Calculate
+                                Earnings</button>
+                            <h5 class="text-success ml-2 mt-3" id="fare"></h5>
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button id='exitModal' type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                {{!-- <h5 class = "text-success" id = "fare"></h5> --}}
+            </div>
+        </div>
+    </div>
+</div>
+
 {{!-- <div class="container pb-5" id='main-container'> --}}
 
 {{!-- LOGO AREA --}}
-<div class="container mt-4 d-flex justify-content-center">
+<div class="container mt-0 d-flex justify-content-center">
 
     <a href="/">
         <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image" height="300" width="300">
     </a>
-    <h1 id="title"> BEST GIG </h1>
-
+    <h1 id="title" class="element"> BEST GIG </h1>
+    <div id="location-user" class="element"> </div>
 </div>
-<center  class = "pt-2 mt-5" id = "center">
+
+
+<center class="pt-1 mt-5" id="center">
     <div class="w-75 pl-3 pr-3" id='main-container'>
 
-        <!-- beginning of search bar, filter, and review box -->
+<!-- beginning of search bar, filter, and review box -->
         <div class="row">
-            <div class="col-sm-9 mt-4 ml-2">
+            <div class="col-sm-9 mt-5 ml-2">
                 <div class="input-group md-form form-sm form-2 pl-5">
                     <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search"
                         aria-label="Search" id="company-search">
@@ -124,49 +186,83 @@
 
                 </div>
             </div>
+
             <div class="col-sm-2 mt-4 pb-3">
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
-                    id="userReview">
-                    Earn Points!
-                </button>
-                <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
+                <div class="row">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#exampleModal" id="userReview">
+                        Earn Points!
+                    </button>
 
-                <div class="modal" id="exampleModal">
 
+                    <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
+
+                    <div class="modal" id="exampleModal"></div>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#machineLearning" id="userReview">
+                        Try our ML Model!
+                    </button>
+
+                    <div class="modal" id="machineLearning">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- end of search bar, filter, and review box -->
-
-       
+    </div>
 
     </div>
-     {{!-- Beginning of results --}}
-        <div class="container mt-3" id="results">
-        </div>
+    <!-- end of search bar, filter, and review box -->
+
+
+
+    </div>
+    {{!-- Beginning of results --}}
+    <div class="container mt-3 pb-5" >
+        <div id="results"></div>
+    </div>
     {{!-- </div> --}}
 </center>
-{{!-- <script>
-    $.ajax({
-        url: "api/companies",
-        type: "GET"
-    }).then(function (dbCompanies) {
-        console.log("saturday morning", dbCompanies)
-
-        function comparePayPerHour(a, b) {
-            return a.average_pay_per_hour - b.average_pay_per_hour;
-        }
-
-        var sortedCompanies = dbCompanies.sort(comparePayPerHour);
-        console.log("sorted our companies :-)", sortedCompanies);
-        for (var i = 0; i < 4; i++) {
-            var titleh1 = $("<h1>")
-            titleh1.text(sortedCompanies[i].company_name)
-            console.log("about to apend to page", titleh1)
-            $("#results").append(titleh1)
-        }
-    })
-</script> --}}
 
 
- 
+
+
+
+<script>
+    $(document).on('ready', function () {
+        $('.kv-gly-star').rating({
+            containerClass: 'is-star'
+        });
+        $('.kv-gly-heart').rating({
+            containerClass: 'is-heart',
+            defaultCaption: '{rating} hearts',
+            starCaptions: function (rating) {
+                return rating == 1 ? 'One heart' : rating + ' hearts';
+            },
+            filledStar: '<i class="glyphicon glyphicon-heart"></i>',
+            emptyStar: '<i class="glyphicon glyphicon-heart-empty"></i>'
+        });
+        $('.kv-fa').rating({
+            theme: 'krajee-fa',
+            filledStar: '<i class="fa fa-star"></i>',
+            emptyStar: '<i class="fa fa-star-o"></i>'
+        });
+        $('.kv-uni-star').rating({
+            theme: 'krajee-uni',
+            filledStar: '&#x2605;',
+            emptyStar: '&#x2606;'
+        });
+        $('.kv-svg').rating({
+            theme: 'krajee-svg',
+            filledStar: '<span class="krajee-icon krajee-icon-star"></span>',
+            emptyStar: '<span class="krajee-icon krajee-icon-star"></span>'
+        });
+        $('.rating,.kv-gly-star,.kv-gly-heart,.kv-uni-star,.kv-uni-rook,.kv-fa,.kv-fa-heart,.kv-svg,.kv-svg-heart').on(
+                'change', function () {
+                    console.log('Rating selected: ' + $(this).val());
+                });
+    });
+</script>
+</html>

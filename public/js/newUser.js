@@ -75,9 +75,10 @@ $(document).ready(function () {
                     var splitName = sortedCompanies[i].company_name.toLowerCase().split(" ").join().replace(/,/, "");
                     var rating = sortedCompanies[i].average_rating;
                     var roundedRating = Math.round(rating);
+                    console.log(sortedCompanies);
                     //same values are modified, but with split Name & sorted company parameters NOTE; there were problems setting the size of the logo, so we may need to discuss
-                    $("#results").append(` <div class="container">
-                    <div class="row mt-5">
+                    $("#results").append(` <div class="wrapper">
+                    <div class="row mt-2">
                     <div class="col-sm-2 ml-5 mt-2 align-middle logo">
                         <img src="https://logo.clearbit.com/${splitName}.com">
                     </div>
@@ -85,31 +86,37 @@ $(document).ready(function () {
  
                         <div class="col-sm-3">
                             <div class="row mt-2" >
-                                <div class="col-sm mt-2 mini-box" id="companyName">${sortedCompanies[i].company_name}</div>
+                                <div class="col-sm mt-2 mini-box" id="companyName">
+                                <font size="5">
+                                Number of Reviews: ${sortedCompanies[i].number_reviews} </font></div>
+                                
                             </div>
+                            
                         </div>
     
                         <div class="col-sm ml-2 mt-4" id="payBox">
-                            Average Pay: <br><br>
-                            <button type="button" class="btn btn-outline-success text-dark" id="ratePay"> 
+                            <font size="5">
+                                Average Pay/ Hour: </font> <br><br>
+                            <div class="btn btn-outline-success text-dark" id="ratePay"> 
                             
-                            $${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
+                            $${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</div>
                         </div>
                             
-                        <div class="col-sm mt-4" id="compRating${i}">Average Rating: <br> <br></div>
+                        <div class="col-sm mt-4" id="compRating${i}">
+                            <font size="5">
+                                Average Rating: </font> <br> <br>
+                        </div>
                         
-
+                        </div>
                         </div> 
                     </div>`)
-
-
 
 
                     for (var j = 0; j < roundedRating; j++) {
                         $('#compRating' + i).append(`<i class="fa fa-star">`);
                     }
                 }
-
+                $("#location-user").append(`in ${locationInput}`);
             })
 
 

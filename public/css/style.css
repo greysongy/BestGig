@@ -19,7 +19,8 @@ body {
 }
 
 #userReview {
-    width: 100%;
+    width: 150%;
+    margin-bottom: 1pt;
 }
 
 #companyName {
@@ -55,7 +56,7 @@ body {
 .fa-star {
     margin-left: 5px;
     color: goldenrod;
-    font-size: 40px;
+    font-size: 40px !important;
 }
 
 
@@ -73,24 +74,27 @@ body {
     height: 13%; */
     border-radius: 50px;
     margin-top: -45px;
+    position: relative;
+    z-index: 1;
 }
 
 #title {
     font-family: 'Boogaloo', cursive;
-    font-size: 100px;
+    font-size: 100px !important;
     margin-top: 5%;
+    z-index: 2;
 }
 
 .modal {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 #ratePay {
-    font-size: 200%;
+    font-size: 20pt;
 }
 
 #newLink {
-    font-size: 100%;
+    font-size: 40pt;
 }
 
 a {
@@ -99,13 +103,16 @@ a {
 
 #results {
     /* background: white; */
-    margin-top: 3%;
+    /* margin-top: 3%; */
     /* border: solid black; */
+    /* background: white; */
+    /* border: solid black;  */
 }
 
-.row {
+.wrapper {
+    border:solid black;
+    margin-top: 2%;
     background: white;
-    border: solid black;
 }
 
 #center {
@@ -117,3 +124,23 @@ a {
    align-items: center;
    flex-wrap: wrap;
 }
+
+
+#rating-stars:hover {
+    transition-delay: 1s; /* delays for 1 second */
+    -webkit-transition-delay: 1s; /* for Safari & Chrome */
+}
+
+.element { 
+    /* position:absolute;  */
+}
+
+#location-user {
+    position: relative;
+    font-size: 55pt;
+    color: #dee2e6; 
+    z-index:3;
+    top: 115px;
+    right: 200pt;
+    font-family: 'Dancing Script', cursive;
+ }
