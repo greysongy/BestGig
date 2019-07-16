@@ -107,18 +107,16 @@ $(document).ready(function () {
                                 Average Rating: </font> <br> <br>
                         </div>
                         
-</div>
+                        </div>
                         </div> 
                     </div>`)
-
-
 
 
                     for (var j = 0; j < roundedRating; j++) {
                         $('#compRating' + i).append(`<i class="fa fa-star">`);
                     }
                 }
-
+                $("#location-user").append(`in ${locationInput}`);
             })
 
 
