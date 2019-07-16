@@ -19,7 +19,7 @@ body {
 }
 
 #userReview {
-    width: 100%;
+    width: 150%;
 }
 
 #companyName {
@@ -82,15 +82,15 @@ body {
 }
 
 .modal {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 #ratePay {
-    font-size: 200%;
+    font-size: 20pt;
 }
 
 #newLink {
-    font-size: 100%;
+    font-size: 40pt;
 }
 
 a {
