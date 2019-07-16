@@ -27,7 +27,7 @@ body {
 }
 
 #payBox {
-    margin-top: 2%;
+    /* margin-top: 2%; */
     height: 150px;
     border-radius: 100px;
     /* background-color: MediumSeaGreen; */
@@ -105,5 +105,15 @@ a {
 
 .row {
     background: white;
-    /* border: solid black; */
+    border: solid black;
+}
+
+#center {
+    background-color: #f0f7ee;
+}
+
+.logo {
+    display: flex;
+   align-items: center;
+   flex-wrap: wrap;
 }
