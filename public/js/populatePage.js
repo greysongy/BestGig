@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     $("#submit").on("click", function () {
         $("#results").empty();
+        $("#location-user").empty();
 
         // Grab text from location input
         // var location = $("#location-search").val().trim()
@@ -69,15 +70,15 @@ $(document).ready(function () {
    
 
                     <div class="col-sm-4">
-                        <div class="row mt-2" >
+                        <div class="row mt-3" >
                             <div class="col-sm mini-box" id="companyName">${sortedCompanies[i].company_name + " " + sortedCompanies[i].location}</div>
                         </div>
   
                     </div>
 
-                    <div class="col-sm-2 ml-2 mt-4" id="payBox">
+                    <div class="col-sm-2 ml-2 mt-3" id="payBox">
                         <font size="5">
-                        Average Pay/ Hour: </font> <br><br>
+                        Average Pay/ Hour: </font> <br>
                         <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
                     </div>
 
@@ -91,6 +92,8 @@ $(document).ready(function () {
                     $('#compRating' + i).append(`<i class="fa fa-star">`);
                 }
             }
+
+ 
 
             // Now that we have all the reviews for companies at this location, we now want to have a list of all the companies
             var companies = []

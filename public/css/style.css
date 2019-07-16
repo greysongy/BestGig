@@ -137,9 +137,10 @@ a {
 
 #location-user {
     position: relative;
-    font-size: 23pt;
-    color:red; 
+    font-size: 55pt;
+    color: #dee2e6; 
     z-index:3;
-    top: 150px;
-    right: 300px;
+    top: 115px;
+    right: 200pt;
+    font-family: 'Dancing Script', cursive;
  }
