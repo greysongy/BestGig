@@ -76,10 +76,15 @@ $(document).ready(function () {
                     </div>
 
                     <div class="col-sm-2 ml-2 mt-4" id="payBox">
+                    <font size="5">
+                    Average Pay: </font> <br><br>
                         <button type="button" class="btn btn-outline-success text-dark" id="ratePay">$${sortedCompanies[i].average_pay_per_hour.toFixed(2)}</button>
                     </div>
 
-                    <div class="col-sm-3 mt-4 " id="compRating${i}"><div>
+                    <div class="col-sm-3 mt-4 " id="compRating${i}"> 
+                    <font size="5">
+                    Average Rating: </font> <br> <br>
+                    <div>
 
 
     </div>`);

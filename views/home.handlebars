@@ -100,10 +100,56 @@
     </div>
 </div>
 
+
+
+<!-- Modal for Machine Learning -->
+<div class="modal fade" id="machineLearning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">TEST ME</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input class="form-control" id="company" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <input class="form-control" id="rating" placeholder="Rating">
+                    </div>
+                    <div class="form-group">
+                        <label>Pay</label>
+                        <input class="form-control" id="pay" placeholder="Pay">
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input class="form-control" id="location" placeholder="Location">
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button id='submitReview' type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{!-- <div class="container pb-5" id='main-container'> --}}
 
 {{!-- LOGO AREA --}}
-<div class="container mt-4 d-flex justify-content-center">
+<div class="container mt-0 d-flex justify-content-center">
 
     <a href="/">
         <img src="./asset/img/IMG_7593.PNG" class="pr-2" id="logo_image" height="300" width="300">
@@ -111,7 +157,7 @@
     <h1 id="title"> BEST GIG </h1>
 
 </div>
-<center  class = "pt-2 mt-5" id = "center">
+<center class="pt-2 mt-5" id="center">
     <div class="w-75 pl-3 pr-3" id='main-container'>
 
         <!-- beginning of search bar, filter, and review box -->
@@ -124,42 +170,42 @@
 
                 </div>
             </div>
-          
+
             <div class="col-sm-2 mt-4 pb-3">
                 <div class="row">
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
-                        id="userReview">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#exampleModal" id="userReview">
                         Earn Points!
                     </button>
 
-                
-                <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
 
-                <div class="modal" id="exampleModal"></div>
+                    <!-- <button type="button" class="btn btn-outline-primary" id="userInput">Earn Points!</button> -->
+
+                    <div class="modal" id="exampleModal"></div>
                 </div>
-        
-<div class="row">
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
-                        id="userReview">
+
+                <div class="row">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#machineLearning" id="userReview">
                         Try our ML Modal!
                     </button>
 
-                <div class="modal" id="exampleModal">
-</div>
+                    <div class="modal" id="machineLearning">
+                    </div>
                 </div>
             </div>
-            </div>
-            </div> 
-            
         </div>
-        <!-- end of search bar, filter, and review box -->
-
-       
+    </div>
 
     </div>
-     {{!-- Beginning of results --}}
-        <div class="container mt-3" id="results">
-        </div>
+    <!-- end of search bar, filter, and review box -->
+
+
+
+    </div>
+    {{!-- Beginning of results --}}
+    <div class="container mt-3" id="results">
+    </div>
     {{!-- </div> --}}
 </center>
 {{!-- <script>
@@ -183,6 +229,3 @@
         }
     })
 </script> --}}
-
-
- 
