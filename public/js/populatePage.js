@@ -69,7 +69,7 @@ $(document).ready(function () {
    
 
                     <div class="col-sm-4">
-                        <div class="row mt-2" style="background-color: peachpuff;">
+                        <div class="row mt-2" >
                             <div class="col-sm mini-box" id="companyName">${sortedCompanies[i].company_name + " " + sortedCompanies[i].location}</div>
                         </div>
   
