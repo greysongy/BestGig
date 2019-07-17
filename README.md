@@ -10,6 +10,8 @@ The purpose of BestGigs is to support hundreds of thousands of people who work i
 * [Visual Studio Code](https://code.visualstudio.com) - source code editor
 * [Node](https://nodejs.org/en/) - a run-time environment that executes Javascript code outside the browser
 * [Bootstrap](https://getbootstrap.com/) - framework for creating responsive page with CSS, jQuery, and JS
+* [Tensorflow.js](https://www.tensorflow.org/js) - open source library for client side machine learning
+
 
 ## Node Packages
 * [Sequelize](https://www.npmjs.com/package/sequelize) - a promise-based node.js ORM for MySQL.
