@@ -23,7 +23,6 @@ The purpose of BestGigs is to support hundreds of thousands of people who work i
 ## Extra
 * [kartik-v bootstrap-star-rating](https://github.com/kartik-v/bootstrap-star-rating) - jQuery plugin for rendering star scoring system that works with Bootstrap
 
-DELETE ME
 --------------------------------------------------
 ## Author links
 ### Adrienne Liu
