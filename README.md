@@ -1,8 +1,8 @@
-# BestGigs
+# BestGig
 ![Gif of Best Gig App](public/asset/img/bestgig.gif)
 
 ## Summary
-The purpose of BestGigs is to support hundreds of thousands of people who work in the gig economy that has skyrocketed in size in the past decade. This app shows users the average pay for gig apps in a specific city, so they will be able to make a more informed decision on which gig they decide to work in that moment. BestGigs has also incorportated a machine learning algorithm using the TensorFlow.js library to forecast the average pay for workers in the next week.
+The purpose of BestGig is to support hundreds of thousands of people who work in the gig economy that has skyrocketed in size in the past decade. This app shows users the average pay for gig apps in a specific city, so they will be able to make a more informed decision on which gig they decide to work in that moment. BestGig has also incorportated a machine learning algorithm using the TensorFlow.js library to forecast the average pay for workers in the next week.
 
 ![Gif of ML Model](public/asset/img/ml-model.gif)
 
