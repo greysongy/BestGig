@@ -35,7 +35,7 @@ The purpose of BestGigs is to support hundreds of thousands of people who work i
 * [GitHub](https://github.com/dchicchon)
 * [LinkedIn](https://www.linkedin.com/in/danielchicchon/)
 
-### Greyson Genhard-Young
+### Greyson Gerhard-Young
 * [GitHub](https://github.com/greysongy)
 * [LinkedIn](https://www.linkedin.com/in/greyson-gerhard-young/)
 
