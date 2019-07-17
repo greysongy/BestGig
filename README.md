@@ -14,7 +14,7 @@ The purpose of BestGigs is to support hundreds of thousands of people who work i
 ## Node Packages
 * [Sequelize](https://www.npmjs.com/package/sequelize) - a promise-based node.js ORM for MySQL.
 * [Express](https://www.npmjs.com/package/express) - a minimalist web framwork for node.js
-* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) - 
+* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) - used to send html for routes.
 * [MySQL2](https://www.npmjs.com/package/mysql2) - used to access MySQL database from node and use with Sequelize ORM
 
 ## APIs
