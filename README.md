@@ -4,6 +4,12 @@
 ## Summary
 The purpose of BestGig is to support hundreds of thousands of people who work in the gig economy that has skyrocketed in size in the past decade. This app shows users the average pay for gig apps in a specific city, so they will be able to make a more informed decision on which gig they decide to work in that moment. BestGig has also incorportated a machine learning algorithm using the TensorFlow.js library to provide fare estimates based off of the distance of a trip.
 
+## Disclaimers 
+
+We currently only have data on San Francisco companies, but are working on integrating with the Glassdoor API to provide results for locations that don't have any reviews yet. Additionally, the Tensorflow.js model doesn't run live in the browser, but was trained separately. It uses the length of an Uber ride to predict the price a driver will receive. We're also in the process of building a more complex multivariate model (that will incorporate factors like time of day/day of the week to give workers more accurate estimates). 
+
+[Live Site](https://bestgig.herokuapp.com/)
+
 ![Gif of ML Model](public/asset/img/ml-model.gif)
 
 ## Technologies Used
