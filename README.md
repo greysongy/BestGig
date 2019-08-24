@@ -9,11 +9,11 @@ BestGig is a platform for gig economy workers to get wage forecasts, filtered by
 
 ## Motivation
 
-The American economy is in a state of flux, with over 35% of workers participating in the gig economy. Disruptive forces like Uber and Lyft have given workers incredible freedom to choose their own hours. Unfortunately, there are plenty of negative trends for workers ( especially as the machine learning revolution makes autonomous vehicles more and more of a reality). 
+The American economy is in a state of flux, with over 35% of workers participating in the gig economy. Disruptive forces like Uber and Lyft have given workers incredible freedom to choose their own hours. Unfortunately, there are plenty of negative trends for workers (especially as the machine learning advances make autonomous vehicles more of a reality). 
 
 Our goal was to build a platform that would empower gig workers. They’d be able to submit reviews and hourly wages, and in return get access to our service. We wanted to invert the role of machine learning, and build a model that could predict an hourly rate based on factors like day of the week, time of day, and location. 
 
-As it currently stands, our model is a bare bones proof of concept. However, with time we hope to get access to more driver data, and eventually build a multifactor model with the factors most relevant to workers. 
+As it currently stands, our model is a bare bones proof of concept. However, with time we hope to get access to more driver data, and eventually build a multi-factor model with the factors most relevant to workers. 
 
 Under this paradigm, workers would be able to rent out their services to the companies offering the best rates. The ultimate hope is that this level of competitive rate comparison would force these larger gig economy companies to offer better wages to their workers. 
 
@@ -33,9 +33,9 @@ If you want to all rates for a particular company (regardless of location), look
 
 ## Machine Learning Component 
 
-Our initial goal was to build a multifactor model. For a longer description of our design process, click here: (article coming soon). The ultimate result was a polynomial regression model that uses the distance of an Uber ride to predict its fare (and subsequently, the wage a driver will earn). 
+Our initial goal was to build a multi-factor model. For a longer description of our design process, click here: (article coming soon). The ultimate result was a polynomial regression model that uses the distance of an Uber ride to predict its fare (and subsequently, the wage a driver will earn). 
    
-We couldn’t find a significant relationship between the time of day and an Uber fare, so we settled on the above parameters. The Tensorflow.js is not embedded in the live site, but the curve we outputted is based on our original model (which used multiple layers of sigmoids and a mean squared error optimizer). 
+We couldn’t find a significant relationship between the time of day and an Uber fare, so we settled on the above parameters. The Tensorflow.js is not embedded in the live site, but the curve we produced is based on our original model (which used multiple layers of sigmoids and a mean squared error optimizer). 
 
 ![ML Model](public/asset/img/bGigMLPic.png)
 
