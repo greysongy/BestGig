@@ -1,16 +1,43 @@
 # BestGig
-![Gif of Best Gig App](public/asset/img/bestgig.gif)
+![Cover Pic](public/asset/img/bGigCover.png)
 
-## Summary
-The purpose of BestGig is to support hundreds of thousands of people who work in the gig economy that has skyrocketed in size in the past decade. This app shows users the average pay for gig apps in a specific city, so they will be able to make a more informed decision on which gig they decide to work in that moment. BestGig has also incorportated a machine learning algorithm using the TensorFlow.js library to provide fare estimates based off of the distance of a trip.
+## Site Disclaimer
 
-## Disclaimers 
-
-We currently only have data on San Francisco companies, but are working on integrating with the Glassdoor API to provide results for locations that don't have any reviews yet. Additionally, the Tensorflow.js model doesn't run live in the browser, but was trained separately. It uses the length of an Uber ride to predict the price a driver will receive. We're also in the process of building a more complex multivariate model (that will incorporate factors like time of day/day of the week to give workers more accurate estimates). 
+Many cities currently don’t have any valid reviews. To simulate the real feel of the site, we planted seed data for five larger areas (San Francisco, Los Angeles, Boston, New York, and Chicago). These averages are provided by Glassdoor, and were only calculated for some of the larger players in the gig economy (Uber, Lyft, Postmates, Doordash, Grubhub, and Instacart), who had enough reviews to be subdivided into various geographic regions. 
 
 [Live Site](https://bestgig.herokuapp.com/)
 
-![Gif of ML Model](public/asset/img/ml-model.gif)
+## Motivation
+
+The American economy is in a state of flux, with over 35% of workers participating in the gig economy. Disruptive forces like Uber and Lyft have given workers incredible freedom to choose their own hours. Unfortunately, there are plenty of negative trends for workers ( especially as the machine learning revolution makes autonomous vehicles more and more of a reality). 
+
+Our goal was to build a platform that would empower gig workers. They’d be able to submit reviews and hourly wages, and in return get access to our service. We wanted to invert the role of machine learning, and build a model that could predict an hourly rate based on factors like day of the week, time of day, and location. 
+
+As it currently stands, our model is a bare bones proof of concept. However, with time we hope to get access to more driver data, and eventually build a multifactor model with the factors most relevant to workers. 
+
+Under this paradigm, workers would be able to rent out their services to the companies offering the best rates. The ultimate hope is that this level of competitive rate comparison would force these larger gig economy companies to offer better wages to their workers. 
+
+## Here’s how BestGig works:
+
+When you arrive at the site, you’re prompted to give your information and location. This is so we can show you results relevant to your location and associate reviews with your account (if you want current results, please choose one of the following: San Francisco, Los Angeles, Boston, Chicago, New York).
+
+![Site Login](public/asset/img/bGigLogin.png)
+
+From there, you’re shown a list of the gig companies in your area, sorted by average hourly wage (each with an associated star rating). 
+
+![Results Page](public/asset/img/bGigResults.png)
+
+If you want to all rates for a particular company (regardless of location), look it up in the search bar. 
+
+![Single Company](public/asset/img/bGigSingleCompany.png)
+
+## Machine Learning Component 
+
+Our initial goal was to build a multifactor model. For a longer description of our design process, click here: (article coming soon). The ultimate result was a polynomial regression model that uses the distance of an Uber ride to predict its fare (and subsequently, the wage a driver will earn). 
+   
+We couldn’t find a significant relationship between the time of day and an Uber fare, so we settled on the above parameters. The Tensorflow.js is not embedded in the live site, but the curve we outputted is based on our original model (which used multiple layers of sigmoids and a mean squared error optimizer). 
+
+![ML Model](public/asset/img/bGigMLPic.png)
 
 ## Technologies Used
 * [Visual Studio Code](https://code.visualstudio.com) - source code editor
