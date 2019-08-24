@@ -3,7 +3,7 @@
 
 ## Site Disclaimer
 
-Many cities currently don’t have any valid reviews. To simulate the real feel of the site, we planted seed data for five larger areas (San Francisco, Los Angeles, Boston, New York, and Chicago). These averages are provided by Glassdoor, and were only calculated for some of the larger players in the gig economy (Uber, Lyft, Postmates, Doordash, Grubhub, and Instacart), who had enough reviews to be subdivided into various geographic regions. 
+BestGig is a platform for gig economy workers to get wage forecasts, filtered by location. Due to the early stage of this project, many individual cities don't currently have valid reviews of employers. To simulate the real feel of the site, we planted seed data for five larger areas (San Francisco, Los Angeles, Boston, New York, and Chicago). These averages are provided by Glassdoor, and were only calculated for some of the larger players in the gig economy (Uber, Lyft, Postmates, Doordash, Grubhub, and Instacart), who had enough reviews to be subdivided into various geographic regions. 
 
 [Live Site](https://bestgig.herokuapp.com/)
 
