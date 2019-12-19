@@ -15,7 +15,13 @@ Our goal was to build a platform that would empower gig workers. They’d be abl
 
 As it currently stands, our model is a bare bones proof of concept. However, with time we hope to get access to more driver data, and eventually build a multi-factor model with the factors most relevant to workers. 
 
-Under this paradigm, workers would be able to rent out their services to the companies offering the best rates. The ultimate hope is that this level of competitive rate comparison would force these larger gig economy companies to offer better wages to their workers. 
+Under this paradigm, workers would be able to rent out their services to the companies offering the best rates. The ultimate hope is that this level of competitive rate comparison would force these larger gig economy companies to offer better wages to their workers.
+
+## Design Iterations 
+
+From an interface perspective, we considered making the website openly accessible (no login necessary). Users preferred the more rapid access, so it made a ton of logical sense. Ultimately, we included the login popup since we envisioned a service where users could maintain their accounts by continuously submitting new data to be fed into the model. 
+
+There were also multiple structures for our backend, with one-to-one and one-to-many mappings as potential options for the underlying MySQL storage structure. We settled on allowing a user to leave multiple reviews, and storing multiple geographic reviews under a single company. 
 
 ## Here’s how BestGig works:
 
@@ -33,11 +39,15 @@ If you want to all rates for a particular company (regardless of location), look
 
 ## Machine Learning Component 
 
-Our initial goal was to build a multi-factor model. For a longer description of our design process, click here: (article coming soon). The ultimate result was a polynomial regression model that uses the distance of an Uber ride to predict its fare (and subsequently, the wage a driver will earn). 
+Our initial goal was to build a multi-factor model. For a longer description of our design process, click here: (https://www.linkedin.com/pulse/using-machine-learning-empower-gig-workers-greyson-gerhard-young/). The ultimate result was a polynomial regression model that uses the distance of an Uber ride to predict its fare (and subsequently, the wage a driver will earn). 
    
 We couldn’t find a significant relationship between the time of day and an Uber fare, so we settled on the above parameters. The Tensorflow.js is not embedded in the live site, but the curve we produced is based on our original model (which used multiple layers of sigmoids and a mean squared error optimizer). 
 
 ![ML Model](public/asset/img/bGigMLPic.png)
+
+## Concluding Thoughts 
+
+In the future, we want to explore more complex models. The continuous nature of this problem made it a difficult one to solve, and that might be improved by discretizing it into a classification problem, where the classes represent categories of wages. One of our key takeaways was that without the requisite data, it was extremely difficult to produce significant results. Thus, we designed the service to eventually facilitate that necessary data collection. 
 
 ## Technologies Used
 * [Visual Studio Code](https://code.visualstudio.com) - source code editor
